@@ -4,7 +4,9 @@
   "description": "20 LOC svg identicon generator",
   "main": "minidenticons.js",
   "scripts": {
-    "test": "echo TODO!"
+    "test": "echo TODO!",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
