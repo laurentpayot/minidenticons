@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Minidenticons Demo</title>
+
+    <style type="text/css" media="screen, print">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        main {
+            text-align: center;
+        }
+        input {
+            margin-top: 100px;
+        }
+        figure {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #EEF;
+            display: inline-block;
+            margin: 5px;
+        }
+        main + figure {
+            width: 80px;
+            height: 80px;
+            display: block;
+            margin: -115px auto 60px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<script type="module">
+    import { identicon } from "./minidenticons.js"
+
+    let previousFigure = null
+
+    function addIdenticon(username) {
+        const figure = document.createElement('figure')
+        figure.innerHTML = `${identicon(username)}`
+        figure.title = username
+        document.body.insertBefore(figure, previousFigure)
+        previousFigure = figure
+    }
+
+    addIdenticon("")
+    document.querySelector('input')
+        .addEventListener('input', ({target: {value}}) => addIdenticon(value))
+</script>
+
+<main>
+    <h1>Minidenticons Demo</h1>
+    <input autofocus size="18" placeholder="Enter a nice username">
+</main>
+
+</body>
+</html>
