@@ -1,0 +1,25 @@
+{
+  "name": "minidenticons",
+  "version": "0.0.1",
+  "description": "20 LOC svg identicon generator",
+  "main": "minidenticons.js",
+  "scripts": {
+    "test": "echo TODO!"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurentpayot/minidenticons.git"
+  },
+  "keywords": [
+    "identicon",
+    "generator",
+    "svg",
+    "avatar"
+  ],
+  "author": "Laurent Payot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laurentpayot/minidenticons/issues"
+  },
+  "homepage": "https://github.com/laurentpayot/minidenticons#readme"
+}
