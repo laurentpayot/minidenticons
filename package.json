@@ -6,7 +6,7 @@
   "exports": "./minidenticons.js",
   "type": "module",
   "engines": {
-    "node": ">=15.3.0"
+    "node": ">=13.2.0"
   },
   "scripts": {
     "test": "node tests",
