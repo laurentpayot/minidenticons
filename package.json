@@ -2,9 +2,14 @@
   "name": "minidenticons",
   "version": "0.0.1",
   "description": "20 LOC svg identicon generator",
-  "main": "minidenticons.js",
+  "main": "./minidenticons.js",
+  "exports": "./minidenticons.js",
+  "type": "module",
+  "engines": {
+    "node": ">=15.3.0"
+  },
   "scripts": {
-    "test": "echo TODO!",
+    "test": "node tests",
     "preversion": "npm test",
     "postversion": "git push && git push --tags && npm publish"
   },
