@@ -4,7 +4,15 @@
 [![npm dependencies](https://badgen.net/david/dep/laurentpayot/minidenticons)](https://david-dm.org/laurentpayot/minidenticons)
 [![npm version](https://badgen.net/npm/v/minidenticons)](https://www.npmjs.com/package/minidenticons)
 
-[20 LOC](https://github.com/laurentpayot/minidenticons/blob/main/minidenticons.js) svg identicon generator. Play with it [here](https://laurentpayot.github.io/minidenticons/) :smiley:
+Minimalist ([20 lines of code](https://github.com/laurentpayot/minidenticons/blob/main/minidenticons.js)) svg identicon generator.
+
+## Why
+
+Generate identicons (pixelated avatars) on the client from usernames instead of fetching images from a server!
+
+## Demo
+
+Play with it [here](https://laurentpayot.github.io/minidenticons/) :video_game:
 
 ## Usage
 
@@ -15,8 +23,6 @@ identicon(username: string): string
 The `identicon` function will return a svg string generated from its username string argument.
 
 ### Browser
-
-You can simply generate identicons on the client instead of fetching images from a server!
 
 Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
 So you can directly import the `identicon` function from your CDN of choice, for instance:
