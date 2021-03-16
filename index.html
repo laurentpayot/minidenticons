@@ -11,6 +11,11 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
+        #github {
+            position: fixed;
+            top: 5px;
+            right: 5px;
+        }
         main {
             text-align: center;
         }
@@ -53,6 +58,10 @@
     document.querySelector('input')
         .addEventListener('input', ({target: {value}}) => addIdenticon(value))
 </script>
+
+<a id="github" href="https://github.com/laurentpayot/minidenticons">
+    <img src="https://badgen.net/badge/icon/github?icon=github&label">
+</a>
 
 <main>
     <h1>Minidenticons Demo</h1>
