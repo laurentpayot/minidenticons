@@ -47,7 +47,7 @@ import { identicon } from '/lib/minidenticons.js'
 
 ### NodeJS
 
-If you want to generate svg images on a server, be sure to use a NodeJS version greater or equal to **13.2.0** to support [ES modules](https://nodejs.org/api/esm.html).
+Be sure to use a NodeJS version greater or equal to **13.2.0** to support [ES modules](https://nodejs.org/api/esm.html).
 
 #### Installation
 
