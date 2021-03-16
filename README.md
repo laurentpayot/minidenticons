@@ -1,5 +1,9 @@
 # :space_invader: Minidenticons
 
+[![npm bundle size](https://badgen.net/bundlephobia/minzip/minidenticons)](https://bundlephobia.com/result?p=minidenticons)
+[![npm dependencies](https://badgen.net/david/dep/laurentpayot/minidenticons)](https://david-dm.org/laurentpayot/minidenticons)
+[![npm version](https://badgen.net/npm/v/minidenticons)](https://www.npmjs.com/package/minidenticons)
+
 [20 LOC](https://github.com/laurentpayot/minidenticons/blob/main/minidenticons.js) svg identicon generator. Play with it [here](https://laurentpayot.github.io/minidenticons/) :smiley:
 
 ## Usage
@@ -47,10 +51,8 @@ npm install minidenticons
 
 ```javascript
 import { identicon } from 'minidenticons'
-
-const svgStr = identicon("foobarbuz")
 ```
 
 ## TODO
 
-- [] more tests
+- [ ] more tests
