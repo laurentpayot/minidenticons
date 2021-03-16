@@ -1,4 +1,4 @@
-# :space_invader: Minidenticons
+# :space_invader: Minidenticons :space_invader:
 
 [![npm bundle size](https://badgen.net/bundlephobia/minzip/minidenticons)](https://bundlephobia.com/result?p=minidenticons)
 [![npm dependencies](https://badgen.net/david/dep/laurentpayot/minidenticons)](https://david-dm.org/laurentpayot/minidenticons)
@@ -10,9 +10,9 @@ Minimalist ([20 lines of code](https://github.com/laurentpayot/minidenticons/blo
 
 Generate identicons (pixelated avatars) on the client from usernames instead of fetching images from a server!
 
-## Demo
+## Demo :video_game:
 
-Play with it [here](https://laurentpayot.github.io/minidenticons/) :video_game:
+Play with it [here](https://laurentpayot.github.io/minidenticons/).
 
 ## Usage
 
