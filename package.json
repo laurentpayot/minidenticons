@@ -11,7 +11,8 @@
   "scripts": {
     "test": "node tests",
     "preversion": "npm test",
-    "postversion": "git push && git push --tags && npm publish"
+    "postversion": "git push && git push --tags && npm publish",
+    "serve": "python3 -m http.server"
   },
   "repository": {
     "type": "git",
