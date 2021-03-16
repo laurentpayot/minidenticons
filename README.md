@@ -1,4 +1,4 @@
-[![Minidenticons](/minidendicons.png)](https://laurentpayot.github.io/minidenticons/)
+[![Minidenticons](minidenticons.png)](https://laurentpayot.github.io/minidenticons/)
 
 # Minidenticons
 
