@@ -4,10 +4,10 @@ SVG identicon generator in [20 lines of JavaScript](https://github.com/laurentpa
 
 [![Minidenticons](minidenticons.png)](https://laurentpayot.github.io/minidenticons/)
 
-[![npm bundle size](https://badgen.net/bundlephobia/minzip/minidenticons)](https://bundlephobia.com/result?p=minidenticons)
-[![npm dependencies](https://badgen.net/david/dep/laurentpayot/minidenticons)](https://david-dm.org/laurentpayot/minidenticons)
+[![minzipped size](https://badgen.net/bundlephobia/minzip/minidenticons)](https://bundlephobia.com/result?p=minidenticons)
+[![dependencies](https://badgen.net/david/dep/laurentpayot/minidenticons)](https://david-dm.org/laurentpayot/minidenticons)
 [![npm version](https://badgen.net/npm/v/minidenticons)](https://www.npmjs.com/package/minidenticons)
-[![license](https://badgen.net/github/license/laurentpayot/minidenticons)](https://www.npmjs.com/package/minidenticons)
+[![license](https://badgen.net/github/license/laurentpayot/minidenticons)](https://github.com/laurentpayot/minidenticons/blob/main/LICENSE)
 
 ## Why
 
