@@ -64,7 +64,7 @@ import { identicon } from 'minidenticons'
 ## Collisions
 
 Generated identicons are 5 pixels by 5 pixels with vertical symmetry, and are of one of the 16 colors available.
-This means there are 2<sup>15</sup>×16 = 524288 different identicons possible, but much less because of the modulo-based algorithm used to get more pixels at the center of the identicon instead of having them scattered. Thus duplicate identicons are inevitable when using a lot of them.
+This means there are 2<sup>15</sup>×16 = 524288 different identicons possible, but much less because of the modulo-based algorithm used to get more colored pixels at the center of the identicon instead of having them scattered. Thus duplicate identicons are inevitable when using a lot of them.
 
 The `npm test` command results below show that you have roughly a 10% chance to generate a duplicate identicon when already using 1000 of them.
 
