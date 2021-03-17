@@ -61,6 +61,31 @@ npm install minidenticons
 import { identicon } from 'minidenticons'
 ```
 
-## TODO
+## Collisions
 
-- [ ] more tests
+Generated identicons are 5 pixels by 5 pixels with vertical symmetry, and are of one of the 16 colors available.
+This means there are 2<sup>15</sup>×16 = 524288 different identicons possible, but much less because of the modulo-based algorithm used to get more pixels at the center of the identicon instead of having them scattered. Thus duplicate identicons are inevitable when using a lot of them.
+
+The `npm test` command results below show that you have roughly a 10% chance to generate a duplicate identicon when already using 1000 of them.
+
+```bash
+0 collisions out of 100 (0.00%)
+3 collisions out of 200 (1.50%)
+7 collisions out of 300 (2.33%)
+12 collisions out of 400 (3.00%)
+18 collisions out of 500 (3.60%)
+32 collisions out of 600 (5.33%)
+48 collisions out of 700 (6.86%)
+68 collisions out of 800 (8.50%)
+81 collisions out of 900 (9.00%)
+96 collisions out of 1000 (9.60%)
+340 collisions out of 2000 (17.00%)
+732 collisions out of 3000 (24.40%)
+1214 collisions out of 4000 (30.35%)
+1765 collisions out of 5000 (35.30%)
+2335 collisions out of 6000 (38.92%)
+2993 collisions out of 7000 (42.76%)
+3676 collisions out of 8000 (45.95%)
+4406 collisions out of 9000 (48.96%)
+5189 collisions out of 10000 (51.89%)
+```
