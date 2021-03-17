@@ -89,3 +89,7 @@ The `npm test` command results below show that you have roughly a 10% chance to 
 4406 collisions out of 9000 (48.96%)
 5189 collisions out of 10000 (51.89%)
 ```
+
+## License
+
+[MIT](https://github.com/laurentpayot/minidenticons/blob/main/LICENSE)
