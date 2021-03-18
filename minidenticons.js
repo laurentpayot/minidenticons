@@ -24,3 +24,15 @@ export function identicon(str) {
         .join('')
     return `<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="${color}">${rects}</svg>`
 }
+
+export const identiconSvg = globalThis.customElements?.define('identicon-svg',
+    class extends HTMLElement {
+        constructor() { super() }
+        connectedCallback() { this.identiconSvg() }
+        attributeChangedCallback() { this.identiconSvg() }
+        static get observedAttributes() { return ['username'] }
+        identiconSvg() {
+            this.innerHTML = identicon(this.getAttribute('username'))
+        }
+    }
+)

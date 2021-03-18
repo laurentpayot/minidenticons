@@ -1,6 +1,6 @@
 # Minidenticons
 
-SVG identicon generator in [20 lines of JavaScript](https://github.com/laurentpayot/minidenticons/blob/main/minidenticons.js).
+Super lightweight ([0.6KB](https://bundlephobia.com/result?p=minidenticons)) SVG identicon generator.
 
 [![Minidenticons](minidenticons.png)](https://laurentpayot.github.io/minidenticons/)
 
@@ -20,7 +20,7 @@ Play with it [here](https://laurentpayot.github.io/minidenticons/).
 ## On Browser
 
 Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
-You can import the `identicon-svg` custom element from your CDN of choice, like so:
+Import the `identicon-svg` custom element from your CDN of choice (or from a local installation on your website directory):
 
 ```html
 <script type="module">
@@ -28,16 +28,22 @@ You can import the `identicon-svg` custom element from your CDN of choice, like 
 </script>
 ```
 
-Then you can use `identicon-svg` tags with an `username` attribute :joy:
+Then simply use `identicon-svg` tags with an `username` attribute :joy:
 
 ```html
 <identicon-svg username="foobarbuz">
 ```
 
-Of course you can also import it from a local install on your website directory:
+Alternatively you can import the `identicon` function described in the NodeJS section below to generate SVG strings directly:
 
-```javascript
-import { identiconSvg } from '/lib/minidenticons/index.js'
+```html
+<script type="module">
+  import { identicon } from 'https://cdn.jsdelivr.net/npm/minidenticons'
+
+  const figure = document.createElement('figure')
+  figure.innerHTML = identicon("foobarbuz")
+  document.body.appendChild(figure)
+</script>
 ```
 
 ## On NodeJS
