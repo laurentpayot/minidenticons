@@ -19,11 +19,12 @@ export function identicon(str) {
     const hash = pseudoFNV1a(str)
     // dividing hash by FNV_PRIME to get last XOR result for better color randomness
     const color = COLORS[(hash / FNV_PRIME) % COLORS.length] || ''
-    const rects = !str ? [] : [...Array(25).keys()]
+    const rects = str ? [...Array(25).keys()]
         // 2 + ((3 * 5 - 1) - modulo) to concentrate squares at the center
         .map(i => hash % (16 - i % 15) < SQUARE_DENSITY ?
             `<rect x="${i > 14 ? 7 - ~~(i/5) : ~~(i/5)}" y="${i % 5}" width="1" height="1"/>` : '')
         .join('')
+        : []
     return `<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="${color}">${rects}</svg>`
 }
 
