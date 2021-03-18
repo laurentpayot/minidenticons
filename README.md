@@ -20,7 +20,7 @@ Play with it [here](https://laurentpayot.github.io/minidenticons/).
 ## On Browser
 
 Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
-Import the `identicon-svg` custom element from your CDN of choice (or from a local installation on your website directory):
+Import the `identicon-svg` custom element from your CDN of choice (or from a local installation on your website directory).
 
 ```html
 <script type="module">
@@ -34,7 +34,7 @@ Then simply use `identicon-svg` tags with an `username` attribute :joy:
 <identicon-svg username="foobarbuz">
 ```
 
-Alternatively you can import the `identicon` function described in the NodeJS section below to generate SVG strings directly:
+Alternatively you can import the `identicon` function described in the NodeJS section below to generate SVG strings directly.
 
 ```html
 <script type="module">
