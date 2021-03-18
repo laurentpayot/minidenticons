@@ -17,50 +17,52 @@ Generate identicons (pixelated avatars) on the client from usernames instead of 
 
 Play with it [here](https://laurentpayot.github.io/minidenticons/).
 
-## Usage
+## On Browser
+
+Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
+You can import the `identicon-svg` custom element from your CDN of choice, like so:
+
+```html
+<script type="module">
+  import { identiconSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons'
+</script>
+```
+
+Then you can use `identicon-svg` tags with an `username` attribute :joy:
+
+```html
+<identicon-svg username="foobarbuz">
+```
+
+Of course you can also import it from a local install on your website directory:
+
+```javascript
+import { identiconSvg } from '/lib/minidenticons/index.js'
+```
+
+## On NodeJS
+
+Be sure to use a NodeJS version greater or equal to **13.2.0** to support [ES modules](https://nodejs.org/api/esm.html).
+
+### Installation
+
+```bash
+npm install minidenticons
+```
+
+### Import
+
+```javascript
+import { identicon } from 'minidenticons'
+```
+
+### Usage
 
 ```typescript
 identicon(username: string): string
 ```
 
 The `identicon` function will return a SVG string generated from its username string argument.
-
-### Browser
-
-Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
-So you can directly import the `identicon` function from your CDN of choice, for instance:
-
-```html
-<script type="module">
-  import { identicon } from 'https://cdn.jsdelivr.net/npm/minidenticons'
-
-  const figure = document.createElement('figure')
-  figure.innerHTML = identicon("foobarbuz")
-  document.body.appendChild(figure)
-</script>
-```
-
-Of course you can also import it from a local install on your website directory:
-
-```javascript
-import { identicon } from '/lib/minidenticons.js'
-```
-
-### NodeJS
-
-Be sure to use a NodeJS version greater or equal to **13.2.0** to support [ES modules](https://nodejs.org/api/esm.html).
-
-#### Installation
-
-```bash
-npm install minidenticons
-```
-
-#### Import
-
-```javascript
-import { identicon } from 'minidenticons'
-```
 
 ## Collisions
 

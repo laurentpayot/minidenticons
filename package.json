@@ -2,9 +2,8 @@
   "name": "minidenticons",
   "version": "0.0.4",
   "description": "20 LOC svg identicon generator",
-  "main": "./minidenticons.js",
-  "exports": "./minidenticons.js",
   "type": "module",
+  "exports": "./index.js",
   "engines": {
     "node": ">=13.2.0"
   },

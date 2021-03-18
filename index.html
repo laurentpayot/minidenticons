@@ -22,7 +22,7 @@
         input {
             margin-top: 100px;
         }
-        figure {
+        identicon-svg {
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -30,7 +30,7 @@
             display: inline-block;
             margin: 5px;
         }
-        main + figure {
+        main + identicon-svg {
             width: 80px;
             height: 80px;
             display: block;
@@ -42,16 +42,16 @@
 <body>
 
 <script type="module">
-    import { identicon } from "./minidenticons.js"
+    import { identiconSvg } from "./index.js"
 
-    let previousFigure = null
+    let previousIdenticon = null
 
     function addIdenticon(username) {
-        const figure = document.createElement('figure')
-        figure.innerHTML = `${identicon(username)}`
-        figure.title = username
-        document.body.insertBefore(figure, previousFigure)
-        previousFigure = figure
+        const identicon = document.createElement('identicon-svg')
+        identicon.setAttribute('username', username)
+        identicon.title = username
+        document.body.insertBefore(identicon, previousIdenticon)
+        previousIdenticon = identicon
     }
 
     addIdenticon("")
