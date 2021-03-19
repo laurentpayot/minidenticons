@@ -16,11 +16,11 @@ function pseudoFNV1a(str) {
         .reduce((hash, code) => ((hash ^ code) >>> 0) * FNV_PRIME, OFFSET_BASIS)
 }
 
-export function identicon(str) {
-    const hash = pseudoFNV1a(str)
+export function identicon(username) {
+    const hash = pseudoFNV1a(username)
     // dividing hash by FNV_PRIME to get last XOR result for better color randomness
     const color = COLORS[(hash / FNV_PRIME) % COLORS.length] || ''
-    const rects = str ? [...Array(25).keys()]
+    const rects = username ? [...Array(25).keys()]
         // 2 + ((3 * 5 - 1) - modulo) to concentrate squares at the center
         .map(i => hash % (16 - i % 15) < SQUARE_DENSITY ?
             `<rect x="${i > 14 ? 7 - ~~(i/5) : ~~(i/5)}" y="${i % 5}" width="1" height="1"/>` : '')
