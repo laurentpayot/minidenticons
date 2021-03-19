@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Lightweight svg identicon generator",
   "type": "module",
+  "main": "./minidenticons.js",
   "exports": "./minidenticons.js",
   "engines": {
     "node": ">=13.2.0"
