@@ -1,9 +1,10 @@
 # Minidenticons
 
-Super lightweight ([0.6KB](https://bundlephobia.com/result?p=minidenticons)) SVG identicon generator.
+Super lightweight SVG identicon generator.
 
 [![Minidenticons](minidenticons.png)](https://laurentpayot.github.io/minidenticons/)
 
+![brotli size](https://badgen.net/badgesize/brotli/laurentpayot/minidenticons/main/minidenticons.min.js)
 [![minzipped size](https://badgen.net/bundlephobia/minzip/minidenticons)](https://bundlephobia.com/result?p=minidenticons)
 [![dependencies](https://badgen.net/david/dep/laurentpayot/minidenticons)](https://david-dm.org/laurentpayot/minidenticons)
 [![npm](https://badgen.net/npm/v/minidenticons)](https://www.npmjs.com/package/minidenticons)
