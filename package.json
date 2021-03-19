@@ -2,22 +2,8 @@
   "name": "minidenticons",
   "version": "0.1.3",
   "description": "Lightweight svg identicon generator",
-  "type": "module",
-  "main": "./minidenticons.js",
-  "exports": "./minidenticons.js",
-  "engines": {
-    "node": ">=13.2.0"
-  },
-  "scripts": {
-    "test": "node tests",
-    "preversion": "npm test",
-    "postversion": "git push && git push --tags && npm publish",
-    "serve": "python3 -m http.server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/laurentpayot/minidenticons.git"
-  },
+  "author": "Laurent Payot",
+  "license": "MIT",
   "keywords": [
     "identicon",
     "generator",
@@ -26,10 +12,28 @@
     "lightweight",
     "light"
   ],
-  "author": "Laurent Payot",
-  "license": "MIT",
+  "type": "module",
+  "main": "./minidenticons.min.js",
+  "exports": "./minidenticons.min.js",
+  "engines": {
+    "node": ">=13.2.0"
+  },
+  "scripts": {
+    "test": "node tests",
+    "build": "terser minidenticons.js --compress module=true --mangle module=true --source-map --output minidenticons.min.js",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags && npm publish",
+    "serve": "python3 -m http.server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurentpayot/minidenticons.git"
+  },
   "bugs": {
     "url": "https://github.com/laurentpayot/minidenticons/issues"
   },
-  "homepage": "https://laurentpayot.github.io/minidenticons"
+  "homepage": "https://laurentpayot.github.io/minidenticons",
+  "devDependencies": {
+    "terser": "^5.6.1"
+  }
 }

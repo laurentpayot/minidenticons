@@ -25,7 +25,7 @@ Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-bro
 
 ```html
 <script type="module">
-  import { identiconSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons'
+  import { identiconSvg } from 'https://unpkg.com/minidenticons'
 </script>
 ```
 
@@ -33,7 +33,7 @@ Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-bro
 
 ```html
 <script type="module">
-  import { identiconSvg } from '/js/minidenticons/minidenticons.js'
+  import { identiconSvg } from '/js/minidenticons/minidenticons.min.js'
 </script>
 ```
 
