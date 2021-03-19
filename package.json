@@ -22,7 +22,9 @@
     "identicon",
     "generator",
     "svg",
-    "avatar"
+    "avatar",
+    "lightweight",
+    "light"
   ],
   "author": "Laurent Payot",
   "license": "MIT",
