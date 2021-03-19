@@ -20,7 +20,8 @@ Play with it [here](https://laurentpayot.github.io/minidenticons/).
 ## On Browser
 
 Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
-Import the `identicon-svg` custom element from your CDN of choice (or from a local installation on your website directory).
+
+- Import the `identicon-svg` custom element from your CDN of choice:
 
 ```html
 <script type="module">
@@ -28,22 +29,18 @@ Import the `identicon-svg` custom element from your CDN of choice (or from a loc
 </script>
 ```
 
+- *OR* from a custom directory on your website (use a full path ending with .js):
+
+```html
+<script type="module">
+  import { identiconSvg } from '/js/minidenticons/minidenticons.js'
+</script>
+```
+
 Then simply use `identicon-svg` tags with an `username` attribute :joy:
 
 ```html
 <identicon-svg username="foobarbuz">
-```
-
-Alternatively you can import the `identicon` function described in the NodeJS section below to generate SVG strings directly.
-
-```html
-<script type="module">
-  import { identicon } from 'https://cdn.jsdelivr.net/npm/minidenticons'
-
-  const figure = document.createElement('figure')
-  figure.innerHTML = identicon("foobarbuz")
-  document.body.appendChild(figure)
-</script>
 ```
 
 ## On NodeJS
@@ -72,7 +69,7 @@ The `identicon` function will return a SVG string generated from its username st
 
 ## Collisions
 
-Generated identicons are 5 pixels by 5 pixels with vertical symmetry, and are of one of the 16 colors available.
+Generated identicons are 5×5 pixels large with vertical symmetry, and are of one of the 16 colors available.
 This means there are 2<sup>15</sup>×16 = 524288 different identicons possible, but much less because of the modulo-based algorithm used to get more colored pixels at the center of the identicon instead of having them scattered. So duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
 
 The `npm test` command results below show that you have roughly a 10% chance to generate a duplicate identicon when already using 1000 of them.
