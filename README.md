@@ -43,6 +43,8 @@ Then simply use `identicon-svg` tags with an `username` attribute :joy:
 <identicon-svg username="foobarbuz">
 ```
 
+Alternatively, instead of `identiconSvg`, you can also import the `identicon` function described in the NodeJS section below and use it to generate SVG strings in your browser.
+
 ## On NodeJS
 
 Be sure to use a NodeJS version greater or equal to **13.2.0** to support [ES modules](https://nodejs.org/api/esm.html).
