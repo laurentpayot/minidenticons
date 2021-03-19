@@ -29,7 +29,7 @@ Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-bro
 </script>
 ```
 
-- *OR* from a custom directory on your website (use a full path ending with .js):
+- *OR* from a custom directory on your website (use a full path ending with `.js`):
 
 ```html
 <script type="module">
