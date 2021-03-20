@@ -13,6 +13,7 @@
     "light"
   ],
   "type": "module",
+  "sideEffects": false,
   "main": "./minidenticons.min.js",
   "exports": "./minidenticons.min.js",
   "engines": {
