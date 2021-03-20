@@ -66,7 +66,7 @@ The `identicon` function will return a SVG string generated from its username st
 ## Collisions
 
 Generated identicons are 5×5 pixels large with vertical symmetry, and are of one of the 16 colors available.
-This means there are 2<sup>15</sup>×16 = 524288 different identicons possible, but much less because of the modulo-based algorithm used to get more colored pixels at the center of the identicon instead of having them scattered. So duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
+This means there are 2<sup>(3×5)</sup>×16 = 524288 different identicons possible, but much less because of the modulo-based algorithm used to get more colored pixels at the center of the identicon instead of having them scattered. So duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
 
 The `npm test` command results below show that you have roughly a 10% chance to generate a duplicate identicon when already using 1000 of them.
 
