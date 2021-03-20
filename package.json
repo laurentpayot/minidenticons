@@ -1,12 +1,24 @@
 {
   "name": "minidenticons",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Lightweight svg identicon generator",
   "author": "Laurent Payot",
   "license": "MIT",
-  "keywords": ["identicon", "generator", "svg", "avatar", "lightweight", "light"],
-  "repository": {"type": "git", "url": "git+https://github.com/laurentpayot/minidenticons.git"},
-  "bugs": {"url": "https://github.com/laurentpayot/minidenticons/issues"},
+  "keywords": [
+    "identicon",
+    "generator",
+    "svg",
+    "avatar",
+    "lightweight",
+    "light"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurentpayot/minidenticons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/laurentpayot/minidenticons/issues"
+  },
   "homepage": "https://laurentpayot.github.io/minidenticons",
   "type": "module",
   "sideEffects": false,
@@ -15,7 +27,10 @@
   "engines": {
     "node": ">=13.2.0"
   },
-  "files": ["minidenticons*.js*", "index.d.ts"],
+  "files": [
+    "minidenticons*.js*",
+    "index.d.ts"
+  ],
   "scripts": {
     "test": "node tests",
     "build": "terser minidenticons.js --compress module=true --mangle module=true --source-map --output minidenticons.min.js",
