@@ -23,19 +23,11 @@ Play with it [here](https://laurentpayot.github.io/minidenticons/).
 
 Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
 
-- Import the `identicon-svg` custom element from your CDN of choice:
+Import the `identicon-svg` custom element from your CDN of choice or from a custom directory on your website:
 
 ```html
 <script type="module">
-  import { identiconSvg } from 'https://unpkg.com/minidenticons'
-</script>
-```
-
-- *OR* from a custom directory on your website (use a full path ending with `.js`):
-
-```html
-<script type="module">
-  import { identiconSvg } from '/js/minidenticons/minidenticons.min.js'
+  import { identiconSvg } from 'https://unpkg.com/minidenticons@0.1.6/minidenticons.min.js'
 </script>
 ```
 
