@@ -27,7 +27,7 @@ Import the `identicon-svg` custom element from your CDN of choice or from a cust
 
 ```html
 <script type="module">
-  import { identiconSvg } from 'https://unpkg.com/minidenticons@0.1.6/minidenticons.min.js'
+  import { identiconSvg } from 'https://unpkg.com/minidenticons@0.1.7/minidenticons.min.js'
 </script>
 ```
 

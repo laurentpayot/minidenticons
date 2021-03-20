@@ -29,8 +29,8 @@ export function identicon(username) {
     return `<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="#${color}">${rects}</svg>`
 }
 
-/*@__PURE__*/export const identiconSvg =
-    globalThis.customElements?.define('identicon-svg',
+export const identiconSvg =
+    globalThis.customElements &&  /*@__PURE__*/customElements.define('identicon-svg',
         class extends HTMLElement {
             constructor() { super() }
             connectedCallback() { this.identiconSvg() }
