@@ -30,7 +30,7 @@ export function identicon(username) {
 }
 
 export const identiconSvg =
-    globalThis.customElements && /*@__PURE__*/customElements.define('identicon-svg',
+    /*@__PURE__*/globalThis.customElements?.define('identicon-svg',
         class extends HTMLElement {
             constructor() { super() }
             connectedCallback() { this.identiconSvg() }
