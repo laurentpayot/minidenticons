@@ -32,9 +32,9 @@
     "index.d.ts"
   ],
   "scripts": {
-    "test": "node tests",
     "build": "terser minidenticons.js --compress module=true --mangle module=true --source-map --output minidenticons.min.js",
-    "preversion": "npm test",
+    "test": "node tests",
+    "preversion": "npm run build && npm test",
     "postversion": "git push && git push --tags && npm publish",
     "serve": "python3 -m http.server"
   },
