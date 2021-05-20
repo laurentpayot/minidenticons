@@ -24,13 +24,14 @@
   "sideEffects": false,
   "main": "./minidenticons.js",
   "exports": "./minidenticons.js",
-  "engines": {
-    "node": ">=13.2.0"
-  },
+  "types": "./index.d.ts",
   "files": [
     "minidenticons*.js*",
     "index.d.ts"
   ],
+  "engines": {
+    "node": ">=13.2.0"
+  },
   "scripts": {
     "build": "terser minidenticons.js --compress module=true --mangle module=true --source-map --output minidenticons.min.js && echo \"\nMinzipped size: `gzip -9 -c minidenticons.min.js | wc -c` bytes\n\"",
     "test": "node tests",
