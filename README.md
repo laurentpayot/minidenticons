@@ -23,7 +23,7 @@ Play with it [here](https://laurentpayot.github.io/minidenticons/).
 
 Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
 
-Import the `identicon-svg` custom element from your CDN of choice or from a custom directory on your website:
+Import the `identicon-svg` custom element from the `minidenticons.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance, since you don’t have to connect to the CDN).
 
 ```html
 <script type="module">
