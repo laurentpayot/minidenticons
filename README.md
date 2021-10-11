@@ -1,6 +1,6 @@
 # Minidenticons
 
-Super lightweight SVG identicon generator.
+Super lightweight SVG identicon generator. No dependencies.
 
 ![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/minidenticons/main/minidenticons.min.js)
 ![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/minidenticons/main/minidenticons.min.js)
