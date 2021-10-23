@@ -9,11 +9,9 @@ const OFFSET_BASIS = 2166136261
 
 // FNV1a-like hash function http://www.isthe.com/chongo/tech/comp/fnv/index.html
 function pseudoFNV1a(str) {
-    return str
-        .split('')
-        .map(char => char.charCodeAt(0))
+    return str.split('')
         // >>> 0 for 32 bit unsigned integer conversion https://2ality.com/2012/02/js-integers.html
-        .reduce((hash, code) => ((hash ^ code) >>> 0) * FNV_PRIME, OFFSET_BASIS)
+        .reduce((hash, char) => ((hash ^ char.charCodeAt(0)) >>> 0) * FNV_PRIME, OFFSET_BASIS)
 }
 
 export function identicon(username) {
