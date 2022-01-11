@@ -34,8 +34,22 @@ Import the `identicon-svg` custom element from the `minidenticons.min.js` file. 
 Then simply use `identicon-svg` tags with an `username` attribute :joy:
 
 ```html
-<identicon-svg username="foobarbuz">
+<identicon-svg username="Johnny5">
 ```
+
+For instance with the `Johnny5` username you will get the following identicon (without the black border):
+
+<figure style="border: 1px solid black;width: 150px; height: 150px">
+<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="#662d8c"><rect x="0" y="1" width="1" height="1"></rect><rect x="0" y="2" width="1" height="1"></rect><rect x="0" y="4" width="1" height="1"></rect><rect x="1" y="2" width="1" height="1"></rect><rect x="1" y="3" width="1" height="1"></rect><rect x="1" y="4" width="1" height="1"></rect><rect x="2" y="0" width="1" height="1"></rect><rect x="2" y="1" width="1" height="1"></rect><rect x="2" y="2" width="1" height="1"></rect><rect x="2" y="3" width="1" height="1"></rect><rect x="2" y="4" width="1" height="1"></rect><rect x="4" y="1" width="1" height="1"></rect><rect x="4" y="2" width="1" height="1"></rect><rect x="4" y="4" width="1" height="1"></rect><rect x="3" y="2" width="1" height="1"></rect><rect x="3" y="3" width="1" height="1"></rect><rect x="3" y="4" width="1" height="1"></rect></svg>
+</figure>
+
+- Note that the picture above is resized. **By default identicons will take all the width available.**
+
+- The white space around the colored squares is here to allow uncropped circle avatars:
+
+<figure style="width: 150px; height: 150px; border-radius: 50%; background-color: #EEF">
+<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="#662d8c"><rect x="0" y="1" width="1" height="1"></rect><rect x="0" y="2" width="1" height="1"></rect><rect x="0" y="4" width="1" height="1"></rect><rect x="1" y="2" width="1" height="1"></rect><rect x="1" y="3" width="1" height="1"></rect><rect x="1" y="4" width="1" height="1"></rect><rect x="2" y="0" width="1" height="1"></rect><rect x="2" y="1" width="1" height="1"></rect><rect x="2" y="2" width="1" height="1"></rect><rect x="2" y="3" width="1" height="1"></rect><rect x="2" y="4" width="1" height="1"></rect><rect x="4" y="1" width="1" height="1"></rect><rect x="4" y="2" width="1" height="1"></rect><rect x="4" y="4" width="1" height="1"></rect><rect x="3" y="2" width="1" height="1"></rect><rect x="3" y="3" width="1" height="1"></rect><rect x="3" y="4" width="1" height="1"></rect></svg>
+</figure>
 
 Alternatively, instead of `identiconSvg`, you can also import the `identicon` function described in the NodeJS section below and use it to generate SVG strings in your browser.
 
