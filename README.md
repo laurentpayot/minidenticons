@@ -42,7 +42,7 @@ For instance with the `Johnny5` username you will get the following identicon (w
 <img src="Johnny5.svg" alt="Johnny5 identicon" width="150" height="150">
 </td></tr></table>
 
-- Note that the picture above is resized. [By default identicons will take all the width available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/Johnny5.svg)
+- Note that the picture above is resized. [By default identicons will take all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/Johnny5.svg)
 
 - The white space around the colored squares is here to allow uncropped circle avatars like the ones you can see in the [demo](https://laurentpayot.github.io/minidenticons/).
 
