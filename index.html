@@ -19,7 +19,15 @@
         main {
             text-align: center;
         }
-        input {
+        fieldset {
+            border: 0;
+            width: 300px;
+            margin: auto;
+        }
+        fieldset > p {
+            text-align: left;
+        }
+        #username {
             margin-top: 100px;
         }
         identicon-svg {
@@ -34,7 +42,7 @@
             width: 80px;
             height: 80px;
             display: block;
-            margin: -115px auto 60px auto;
+            margin: -220px auto 160px auto;
         }
     </style>
 </head>
@@ -44,19 +52,46 @@
 <script type="module">
     import { identiconSvg } from "./minidenticons.min.js"
 
-    let previousIdenticon = null
+    const state = {
+        username: "",
+        saturation: 50,
+        lightness: 50
+    }
+    const saturationLabel = document.querySelector('label[for=saturation]')
+    const lightnessLabel = document.querySelector('label[for=lightness]')
+    const main = document.querySelector('main')
 
-    function addIdenticon(username) {
-        const identicon = document.createElement('identicon-svg')
-        identicon.setAttribute('username', username)
-        identicon.title = username
-        document.body.insertBefore(identicon, previousIdenticon)
-        previousIdenticon = identicon
+    function refresh() {
+        main.insertAdjacentHTML("afterend",
+            `<identicon-svg username="${state.username}"
+                title='"${state.username}", ${state.saturation}, ${state.lightness}'
+                saturation="${state.saturation}" lightness="${state.lightness}"
+            >`
+        )
+        saturationLabel.textContent = `Saturation ${state.saturation}%`
+        lightnessLabel.textContent = `Lightness ${state.lightness}%`
     }
 
-    addIdenticon("")
-    document.querySelector('input')
-        .addEventListener('input', ({target: {value}}) => addIdenticon(value))
+    refresh()
+
+    document.querySelector('#username')
+        .addEventListener('input', ({target: {value}}) => {
+            state.username = value
+            refresh()
+        })
+
+    document.querySelector('#saturation')
+        .addEventListener('change', ({target: {value}}) => {
+            state.saturation = value
+            refresh()
+        })
+
+    document.querySelector('#lightness')
+        .addEventListener('change', ({target: {value}}) => {
+            state.lightness = value
+            refresh()
+        })
+
 </script>
 
 <a id="github" href="https://github.com/laurentpayot/minidenticons">
@@ -65,7 +100,17 @@
 
 <main>
     <h1>Minidenticons Demo</h1>
-    <input autofocus size="18" placeholder="Enter a nice username">
+    <input id="username" autofocus size="18" placeholder="Enter a nice username">
+    <fieldset>
+        <p>
+            <input type="range" id="saturation" min="0" max="100" value="50">
+            <label for="saturation"></label>
+        </p>
+        <p>
+            <input type="range" id="lightness" min="0" max="100" value="50">
+            <label for="lightness"></label>
+        </p>
+    </div>
 </main>
 
 </body>
