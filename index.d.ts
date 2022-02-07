@@ -1,1 +1,1 @@
-export function identicon(username: string, saturation: number, lightness: number): string
+export function identicon(username: string, saturation?: number, lightness?: number): string
