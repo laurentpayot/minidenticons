@@ -64,7 +64,7 @@
     function refresh() {
         main.insertAdjacentHTML("afterend",
             `<identicon-svg username="${state.username}"
-                title='"${state.username}", ${state.saturation}, ${state.lightness}'
+                title='"${state.username.replaceAll("'", "&apos;")}", ${state.saturation}, ${state.lightness}'
                 saturation="${state.saturation}" lightness="${state.lightness}"
             >`
         )
