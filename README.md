@@ -86,7 +86,7 @@ import { identicon } from 'minidenticons'
 identicon(username: string, saturation?: number, lightness?: number): string
 ```
 
-The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness parameters should be percentages, i.e numbers between 0 and 100.
+The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages, i.e numbers between 0 and 100.
 
 ## Collisions
 
