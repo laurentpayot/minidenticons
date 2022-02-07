@@ -52,16 +52,17 @@
 <script type="module">
     import { identiconSvg } from "./minidenticons.min.js"
 
-    const state = {
+    let state = {
         username: "",
         saturation: 50,
         lightness: 50
     }
+    const main = document.querySelector('main')
     const saturationLabel = document.querySelector('label[for=saturation]')
     const lightnessLabel = document.querySelector('label[for=lightness]')
-    const main = document.querySelector('main')
 
-    function refresh() {
+    function refresh(newState={}) {
+        state = { ...state, ...newState }
         main.insertAdjacentHTML("afterend",
             `<identicon-svg username="${state.username}"
                 title='"${state.username.replaceAll("'", "&apos;")}", ${state.saturation}, ${state.lightness}'
@@ -75,22 +76,13 @@
     refresh()
 
     document.querySelector('#username')
-        .addEventListener('input', ({target: {value}}) => {
-            state.username = value
-            refresh()
-        })
+        .addEventListener('input', ({target: {value}}) => refresh({username: value}))
 
     document.querySelector('#saturation')
-        .addEventListener('change', ({target: {value}}) => {
-            state.saturation = value
-            refresh()
-        })
+        .addEventListener('change', ({target: {value}}) => refresh({saturation: value}))
 
     document.querySelector('#lightness')
-        .addEventListener('change', ({target: {value}}) => {
-            state.lightness = value
-            refresh()
-        })
+        .addEventListener('change', ({target: {value}}) => refresh({lightness: value}))
 
 </script>
 
