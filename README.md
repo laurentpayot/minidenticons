@@ -48,6 +48,22 @@ For instance with the `Johnny5` username you will get the following identicon (w
 
 Alternatively, instead of `identiconSvg`, you can also import the `identicon` function described in the NodeJS section below and use it to generate SVG strings in your browser.
 
+### Customization
+
+```html
+<identicon-svg username="Johnny5" saturation="100" lightness="85">
+```
+<table><tr><td>
+<img src="Johnny5_light.svg" alt="Johnny5 identicon light" width="150" height="150">
+</td></tr></table>
+
+```html
+<identicon-svg username="Johnny5" saturation="80" lightness="40">
+```
+<table><tr><td>
+<img src="Johnny5_dark.svg" alt="Johnny5 identicon light" width="150" height="150">
+</td></tr></table>
+
 ## On NodeJS
 
 Be sure to use a NodeJS version greater or equal to **13.2.0** to support [ES modules](https://nodejs.org/api/esm.html).
@@ -67,10 +83,10 @@ import { identicon } from 'minidenticons'
 ### Usage
 
 ```typescript
-identicon(username: string): string
+identicon(username: string, saturation?: number, lightness?: number): string
 ```
 
-The `identicon` function will return a SVG string generated from its username string argument.
+The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness parameters should be percentages, i.e numbers between 0 and 100.
 
 ## Collisions
 
@@ -84,23 +100,23 @@ The `npm test` command results below show that you have roughly a 10% chance to 
 ```bash
 0 collisions out of 100 (0.00%)
 3 collisions out of 200 (1.50%)
-7 collisions out of 300 (2.33%)
-12 collisions out of 400 (3.00%)
-18 collisions out of 500 (3.60%)
-32 collisions out of 600 (5.33%)
-48 collisions out of 700 (6.86%)
-68 collisions out of 800 (8.50%)
-81 collisions out of 900 (9.00%)
-96 collisions out of 1000 (9.60%)
-340 collisions out of 2000 (17.00%)
-732 collisions out of 3000 (24.40%)
-1214 collisions out of 4000 (30.35%)
-1765 collisions out of 5000 (35.30%)
-2335 collisions out of 6000 (38.92%)
-2993 collisions out of 7000 (42.76%)
-3676 collisions out of 8000 (45.95%)
-4406 collisions out of 9000 (48.96%)
-5189 collisions out of 10000 (51.89%)
+9 collisions out of 300 (3.00%)
+19 collisions out of 400 (4.75%)
+27 collisions out of 500 (5.40%)
+37 collisions out of 600 (6.17%)
+46 collisions out of 700 (6.57%)
+59 collisions out of 800 (7.38%)
+78 collisions out of 900 (8.67%)
+95 collisions out of 1000 (9.50%)
+330 collisions out of 2000 (16.50%)
+722 collisions out of 3000 (24.07%)
+1216 collisions out of 4000 (30.40%)
+1753 collisions out of 5000 (35.06%)
+2372 collisions out of 6000 (39.53%)
+3025 collisions out of 7000 (43.21%)
+3700 collisions out of 8000 (46.25%)
+4450 collisions out of 9000 (49.44%)
+5216 collisions out of 10000 (52.16%)
 ```
 
 ## License
