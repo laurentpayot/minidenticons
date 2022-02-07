@@ -15,19 +15,17 @@ function pseudoFNV1a(str) {
         .reduce((hash, char) => ((hash ^ char.charCodeAt(0)) >>> 0) * FNV_PRIME, OFFSET_BASIS)
 }
 
-// TODO saturation and lightness parameters???
-export function identicon(username) {
+export function identicon(username, saturation=50, lightness=50) {
     const hash = pseudoFNV1a(username)
     // dividing hash by FNV_PRIME to get last XOR result for better color randomness
-    // const color = '#' + (hash / FNV_PRIME).toString(16).slice(-6)
-    const hue = (hash / FNV_PRIME % COLORS_NB * 256 / COLORS_NB) << 0
+    const hue = ~~(hash / FNV_PRIME % COLORS_NB * 256 / COLORS_NB)
     const rects = username ? [...Array(25).keys()]
         // 2 + ((3 * 5 - 1) - modulo) to concentrate squares at the center
         .map(i => hash % (16 - i % 15) < SQUARE_DENSITY ?
             `<rect x="${i > 14 ? 7 - ~~(i/5) : ~~(i/5)}" y="${i % 5}" width="1" height="1"/>` : '')
         .join('')
         : []
-    return `<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="hsl(${hue} 50% 50%)">${rects}</svg>`
+    return `<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="hsl(${hue} ${saturation}% ${lightness}%)">${rects}</svg>`
 }
 
 export const identiconSvg =
@@ -36,9 +34,13 @@ export const identiconSvg =
             constructor() { super() }
             connectedCallback() { this.identiconSvg() }
             attributeChangedCallback() { this.identiconSvg() }
-            static get observedAttributes() { return ['username'] }
+            static get observedAttributes() { return ['username', 'saturation', 'lightness'] }
             identiconSvg() {
-                this.innerHTML = identicon(this.getAttribute('username'))
+                this.innerHTML = identicon(
+                    this.getAttribute('username'),
+                    this.getAttribute('saturation'),
+                    this.getAttribute('lightness')
+                )
             }
         }
     )
