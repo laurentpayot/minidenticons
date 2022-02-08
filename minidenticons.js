@@ -18,13 +18,12 @@ function pseudoFNV1a(str) {
 export function identicon(username, saturation=50, lightness=50) {
     const hash = pseudoFNV1a(username)
     // dividing hash by FNV_PRIME to get last XOR result for better color randomness (will be an integer except for empty string hash)
-    const hue = ((hash / FNV_PRIME) % COLORS_NB) * (360 / COLORS_NB)
-    const rects = username ? [...Array(25).keys()]
+    const hue = hash / FNV_PRIME % COLORS_NB * 360 / COLORS_NB
+    const rects = [...Array(username ? 25 : 0).keys()]
         // 2 + ((3 * 5 - 1) - modulo) to concentrate squares at the center
         .map(i => hash % (16 - i % 15) < SQUARE_DENSITY ?
             `<rect x="${i > 14 ? 7 - ~~(i/5) : ~~(i/5)}" y="${i % 5}" width="1" height="1"/>` : '')
         .join('')
-        : []
     return `<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="hsl(${hue} ${saturation}% ${lightness}%)">${rects}</svg>`
 }
 
