@@ -1,7 +1,7 @@
 // density of 4 for the lowest probability of collision
 const SQUARE_DENSITY = 4
-// 16 different colors only for easy distinction
-const COLORS_NB = 16
+// 18 different colors only for easy distinction
+const COLORS_NB = 18
 
 // 32 bit FNV-1a hash parameters
 const FNV_PRIME = 16777619
@@ -17,8 +17,8 @@ function pseudoFNV1a(str) {
 
 export function identicon(username, saturation=50, lightness=50) {
     const hash = pseudoFNV1a(username)
-    // dividing hash by FNV_PRIME to get last XOR result for better color randomness
-    const hue = ~~(hash / FNV_PRIME % COLORS_NB * 256 / COLORS_NB)
+    // dividing hash by FNV_PRIME to get last XOR result for better color randomness (will be an integer except for empty string hash)
+    const hue = ((hash / FNV_PRIME) % COLORS_NB) * (360 / COLORS_NB)
     const rects = username ? [...Array(25).keys()]
         // 2 + ((3 * 5 - 1) - modulo) to concentrate squares at the center
         .map(i => hash % (16 - i % 15) < SQUARE_DENSITY ?
