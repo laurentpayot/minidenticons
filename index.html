@@ -11,10 +11,10 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
-        #github {
+        #github-link {
             position: fixed;
-            top: 5px;
-            right: 5px;
+            top: 10px;
+            right: 10px;
         }
         main {
             text-align: center;
@@ -27,7 +27,7 @@
         fieldset > p {
             text-align: left;
         }
-        #username {
+        #username-input {
             margin-top: 100px;
         }
         identicon-svg {
@@ -52,54 +52,47 @@
 <script type="module">
     import { identiconSvg } from "./minidenticons.min.js"
 
-    let state = {
-        username: "",
-        saturation: 50,
-        lightness: 50
-    }
     const main = document.querySelector('main')
-    const saturationLabel = document.querySelector('label[for=saturation]')
-    const lightnessLabel = document.querySelector('label[for=lightness]')
+    const usernameInput = main.querySelector('#username-input')
+    const saturationInput = main.querySelector('#saturation-input')
+    const saturationLabel = main.querySelector('label[for=saturation]')
+    const lightnessInput = main.querySelector('#lightness-input')
+    const lightnessLabel = main.querySelector('label[for=lightness]')
 
-    function refresh(newState={}) {
-        state = { ...state, ...newState }
+    function refresh() {
+        saturationLabel.textContent = `Saturation ${saturationInput.value}%`
+        lightnessLabel.textContent = `Lightness ${lightnessInput.value}%`
         main.insertAdjacentHTML("afterend",
-            `<identicon-svg username="${state.username}"
-                title='"${state.username.replaceAll("'", "&apos;")}", ${state.saturation}, ${state.lightness}'
-                saturation="${state.saturation}" lightness="${state.lightness}"
+            `<identicon-svg username="${usernameInput.value}"
+                title='"${usernameInput.value.replaceAll("'", "&apos;")}",
+                        ${saturationInput.value}, ${lightnessInput.value}'
+                saturation="${saturationInput.value}" lightness="${lightnessInput.value}"
             >`
         )
-        saturationLabel.textContent = `Saturation ${state.saturation}%`
-        lightnessLabel.textContent = `Lightness ${state.lightness}%`
     }
+
+    usernameInput.addEventListener('input', () => refresh())
+    saturationInput.addEventListener('change', () => refresh())
+    lightnessInput.addEventListener('change', () => refresh())
 
     refresh()
 
-    document.querySelector('#username')
-        .addEventListener('input', ({target: {value}}) => refresh({username: value}))
-
-    document.querySelector('#saturation')
-        .addEventListener('change', ({target: {value}}) => refresh({saturation: value}))
-
-    document.querySelector('#lightness')
-        .addEventListener('change', ({target: {value}}) => refresh({lightness: value}))
-
 </script>
 
-<a id="github" href="https://github.com/laurentpayot/minidenticons">
+<a id="github-link" href="https://github.com/laurentpayot/minidenticons">
     <img src="https://badgen.net/badge/icon/github?icon=github&label" alt="GitHub repository">
 </a>
 
 <main>
     <h1>Minidenticons Demo</h1>
-    <input id="username" autofocus size="18" placeholder="Enter a nice username">
+    <input id="username-input" autofocus size="18" placeholder="Enter a nice username">
     <fieldset>
         <p>
-            <input type="range" id="saturation" min="0" max="100" value="50">
+            <input type="range" id="saturation-input" min="0" max="100" value="50">
             <label for="saturation"></label>
         </p>
         <p>
-            <input type="range" id="lightness" min="0" max="100" value="50">
+            <input type="range" id="lightness-input" min="0" max="100" value="50">
             <label for="lightness"></label>
         </p>
     </div>
