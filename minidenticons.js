@@ -2,6 +2,8 @@
 const SQUARE_DENSITY = 4
 // 18 different colors only for easy distinction
 const COLORS_NB = 18
+const DEFAULT_SATURATION = 50
+const DEFAULT_LIGHTNESS = 50
 
 // 32 bit FNV-1a hash parameters
 const FNV_PRIME = 16777619
@@ -20,7 +22,7 @@ function pseudoFNV1a(str) {
 /**
  * @type {import('.').identicon}
  */
-export function identicon(username, saturation=50, lightness=50) {
+export function identicon(username, saturation=DEFAULT_SATURATION, lightness=DEFAULT_LIGHTNESS) {
     const hash = pseudoFNV1a(username)
     // dividing hash by FNV_PRIME to get last XOR result for better color randomness (will be an integer except for empty string hash)
     const hue = hash / FNV_PRIME % COLORS_NB * 360 / COLORS_NB
@@ -42,8 +44,8 @@ export const identiconSvg =
             identiconSvg() {
                 this.innerHTML = identicon(
                     this.getAttribute('username') ?? "",
-                    parseInt(this.getAttribute('saturation') ?? "50"),
-                    parseInt(this.getAttribute('lightness') ?? "50")
+                    this.getAttribute('saturation') ?? DEFAULT_SATURATION,
+                    this.getAttribute('lightness') ?? DEFAULT_LIGHTNESS
                 )
             }
         }
