@@ -7,7 +7,9 @@ const COLORS_NB = 18
 const FNV_PRIME = 16777619
 const OFFSET_BASIS = 2166136261
 
-
+/**
+ * @type {(str: string) => number}
+ */
 // FNV1a-like hash function http://www.isthe.com/chongo/tech/comp/fnv/index.html
 function pseudoFNV1a(str) {
     return str.split('')
@@ -15,6 +17,9 @@ function pseudoFNV1a(str) {
         .reduce((hash, char) => ((hash ^ char.charCodeAt(0)) >>> 0) * FNV_PRIME, OFFSET_BASIS)
 }
 
+/**
+ * @type {import('.').identicon}
+ */
 export function identicon(username, saturation=50, lightness=50) {
     const hash = pseudoFNV1a(username)
     // dividing hash by FNV_PRIME to get last XOR result for better color randomness (will be an integer except for empty string hash)
