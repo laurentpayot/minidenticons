@@ -43,9 +43,9 @@ export const identiconSvg =
             static get observedAttributes() { return ['username', 'saturation', 'lightness'] }
             identiconSvg() {
                 this.innerHTML = identicon(
-                    this.getAttribute('username') ?? "",
-                    this.getAttribute('saturation') ?? DEFAULT_SATURATION,
-                    this.getAttribute('lightness') ?? DEFAULT_LIGHTNESS
+                    this.getAttribute('username') || "",
+                    this.getAttribute('saturation') || DEFAULT_SATURATION,
+                    this.getAttribute('lightness') || DEFAULT_LIGHTNESS
                 )
             }
         }
