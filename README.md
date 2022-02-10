@@ -44,7 +44,7 @@ For instance with the `alienHead66` username you will get the following identico
 
 - Note that the picture above is resized. [By default identicons will take all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/alienHead66.svg)
 
-- The white space around the colored squares is here to allow uncropped circle avatars like the ones you can see in the [demo](https://laurentpayot.github.io/minidenticons/).
+- The white space around the colored squares is here to allow uncropped circle avatars like the ones you can see in [the demo](https://laurentpayot.github.io/minidenticons/).
 
 Alternatively, instead of `identiconSvg`, you can also import the `identicon` function described in the NodeJS section below and use it to generate SVG strings in your browser.
 
@@ -89,10 +89,10 @@ The `identicon` function will return a SVG string generated from its username st
 
 You will always get the same identicon for a given username. But it is not impossible to have different usernames with the same identicon. That's a [collision](https://en.wikipedia.org/wiki/Hash_collision).
 
-Generated identicons are 5×5 pixels large with vertical symmetry, and are of one of the 16 colors available.
-This means there are 2<sup>(3×5)</sup>×16 = 524288 different identicons possible, but much less because of the modulo-based algorithm used to get more colored pixels at the center of the identicon instead of having them scattered. So duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
+Generated identicons are 5×5 pixels large with vertical symmetry, and can have 18 different hues for the same saturation and lightness.
+This means there are 2<sup>(3×5)</sup> × 18 = 589,824 different identicons possible, but actually much less because of the modulo-based algorithm used to get more colored pixels at the center of the identicon instead of having them scattered. So duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
 
-The `npm test` command results below show that you have roughly a 10% chance to generate a duplicate identicon when already using 1000 of them.
+The `npm test` command results below show that you have roughly a 7% chance to generate a duplicate identicon when already using 1000 of them.
 
 ```bash
 0 collisions out of 100 (0.00%)
