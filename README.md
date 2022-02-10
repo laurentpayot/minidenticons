@@ -55,6 +55,7 @@ By default the color saturation and lightness are set to 50%. But you can change
 ```html
 <identicon-svg username="alienHead66" saturation="95" lightness="60">
 ```
+
 Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark, pastel or whatever :sunglasses:
 
 ![Minidenticons](minidenticons_light.png)
@@ -76,6 +77,8 @@ npm install minidenticons
 ```javascript
 import { identicon } from 'minidenticons'
 ```
+
+The `identicon-svg` custom element should be tree-shaken from your bundle, for an even smaller size of minidenticons :grin:
 
 ### Usage
 
