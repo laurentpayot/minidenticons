@@ -10,7 +10,7 @@ const FNV_PRIME = 16777619
 const OFFSET_BASIS = 2166136261
 
 /**
- * @type {(str: string) => number}
+ * @type {(str: string): number}
  */
 // FNV1a-like hash function http://www.isthe.com/chongo/tech/comp/fnv/index.html
 function pseudoFNV1a(str) {
@@ -34,6 +34,9 @@ export function identicon(username, saturation=DEFAULT_SATURATION, lightness=DEF
     return `<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="hsl(${hue} ${saturation}% ${lightness}%)">${rects}</svg>`
 }
 
+/**
+ * @type {void}
+ */
 export const identiconSvg =
     // optional chaining only available on node 14+
     globalThis.customElements && /*@__PURE__*/customElements.define('identicon-svg',
