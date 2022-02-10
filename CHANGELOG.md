@@ -8,7 +8,7 @@ _2022-02-10_
 
 - 18 different colors instead of 16 (less collisions)
 - Saturation and lightness customization
-- Smaller minified size
+- Smaller minified + compressed size
 
 ### Bug Fixes
 
