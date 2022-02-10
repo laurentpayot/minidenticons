@@ -34,35 +34,32 @@ Import the `identicon-svg` custom element from the `minidenticons.min.js` file. 
 Then simply use `identicon-svg` tags with an `username` attribute :joy:
 
 ```html
-<identicon-svg username="Johnny5">
+<identicon-svg username="alienHead66">
 ```
 
-For instance with the `Johnny5` username you will get the following identicon (without the border):
+For instance with the `alienHead66` username you will get the following identicon (without the border):
 <table><tr><td>
-<img src="Johnny5.svg" alt="Johnny5 identicon" width="150" height="150">
+<img src="alienHead66.svg" alt="alienHead66 identicon" width="150" height="150">
 </td></tr></table>
 
-- Note that the picture above is resized. [By default identicons will take all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/Johnny5.svg)
+- Note that the picture above is resized. [By default identicons will take all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/alienHead66.svg)
 
 - The white space around the colored squares is here to allow uncropped circle avatars like the ones you can see in the [demo](https://laurentpayot.github.io/minidenticons/).
 
 Alternatively, instead of `identiconSvg`, you can also import the `identicon` function described in the NodeJS section below and use it to generate SVG strings in your browser.
 
-### Customization
+### Color Customization
+
+By default the color saturation and lightness are set to 50%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
 
 ```html
-<identicon-svg username="Johnny5" saturation="100" lightness="85">
+<identicon-svg username="alienHead66" saturation="95" lightness="60">
 ```
-<table><tr><td>
-<img src="Johnny5_light.svg" alt="Johnny5 identicon light" width="150" height="150">
-</td></tr></table>
+Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark, pastel or whatever :sunglasses:
 
-```html
-<identicon-svg username="Johnny5" saturation="80" lightness="40">
-```
-<table><tr><td>
-<img src="Johnny5_dark.svg" alt="Johnny5 identicon light" width="150" height="150">
-</td></tr></table>
+![Minidenticons](minidenticons_light.png)
+![Minidenticons](minidenticons_dark.png)
+![Minidenticons](minidenticons_pastel.png)
 
 ## On NodeJS
 
@@ -83,10 +80,10 @@ import { identicon } from 'minidenticons'
 ### Usage
 
 ```typescript
-identicon(username: string, saturation?: number, lightness?: number): string
+identicon(username: string, saturation?: number|string, lightness?: number|string): string
 ```
 
-The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages, i.e numbers between 0 and 100.
+The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages, i.e numbers (or strings) between 0 and 100.
 
 ## Collisions
 
