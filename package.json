@@ -1,6 +1,6 @@
 {
   "name": "minidenticons",
-  "version": "0.1.11",
+  "version": "1.0.0",
   "description": "Lightweight svg identicon generator",
   "author": "Laurent Payot",
   "license": "MIT",
