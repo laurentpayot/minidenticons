@@ -58,9 +58,9 @@ By default the color saturation and lightness are set to 50%. But you can change
 
 Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark, pastel or whatever :sunglasses:
 
-![Minidenticons](minidenticons_light.png)
-![Minidenticons](minidenticons_dark.png)
-![Minidenticons](minidenticons_pastel.png)
+![Minidenticons light](minidenticons_light.png)
+![Minidenticons dark](minidenticons_dark.png)
+![Minidenticons pastel](minidenticons_pastel.png)
 
 ## On NodeJS
 
