@@ -34,7 +34,9 @@
     "node": ">=13.2.0"
   },
   "scripts": {
-    "build": "terser minidenticons.js --compress module=true --mangle module=true --source-map --output minidenticons.min.js && echo \"\nMinzipped size: `gzip -9 -c minidenticons.min.js | wc -c` bytes\n\"",
+    "build-js": "terser minidenticons.js --compress module=true --mangle module=true --source-map --output minidenticons.min.js",
+    "size": "echo \"\nMinified gzip size:\t`gzip -9cn minidenticons.min.js | wc -c` bytes\nMinified brotli size:\t`brotli -Zcn minidenticons.min.js | wc -c` bytes\n\"",
+    "build": "npm run build-js && npm run size",
     "test": "node tests",
     "preversion": "npm run build && npm test",
     "postversion": "git push && git push --tags && npm publish",
