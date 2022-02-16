@@ -12,8 +12,8 @@ const OFFSET_BASIS = 2166136261
 /**
  * @type {(str: string): number}
  */
-// FNV1a-like hash function http://www.isthe.com/chongo/tech/comp/fnv/index.html
-function pseudoFNV1a(str) {
+// based on the FNV-1a hash algorithm, modified for *signed* 32 bit integers http://www.isthe.com/chongo/tech/comp/fnv/index.html
+function simpleHash(str) {
     return str.split('')
         // >>> 0 for 32 bit unsigned integer conversion https://2ality.com/2012/02/js-integers.html
         .reduce((hash, char) => ((hash ^ char.charCodeAt(0)) >>> 0) * FNV_PRIME, OFFSET_BASIS)
@@ -23,7 +23,7 @@ function pseudoFNV1a(str) {
  * @type {import('.').identicon}
  */
 export function identicon(username, saturation=DEFAULT_SATURATION, lightness=DEFAULT_LIGHTNESS) {
-    const hash = pseudoFNV1a(username)
+    const hash = simpleHash(username)
     // dividing hash by FNV_PRIME to get last XOR result for better color randomness (will be an integer except for empty string hash)
     const hue = ((hash / FNV_PRIME) % COLORS_NB) * (360 / COLORS_NB)
     const rects = [...Array(username ? 25 : 0).keys()]
