@@ -97,7 +97,7 @@ This means there are 2<sup>(3×5)</sup> × 18 = 589,824 different identi
 
 The `npm test` command results below show that you have roughly a 7% chance to generate a duplicate identicon when already using 1000 of them.
 
-```bash
+```text
 0 collisions out of 100 (0.00%)
 0 collisions out of 200 (0.00%)
 2 collisions out of 300 (0.67%)
