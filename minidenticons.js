@@ -31,6 +31,7 @@ export function identicon(username, saturation=DEFAULT_SATURATION, lightness=DEF
         .map(i => hash % (16 - i % 15) < SQUARE_DENSITY ?
             `<rect x="${i > 14 ? 7 - ~~(i/5) : ~~(i/5)}" y="${i % 5}" width="1" height="1"/>` : '')
         .join('')
+    // xmlns attribute added in case of SVG file generation https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg#sect1
     return `<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="hsl(${hue} ${saturation}% ${lightness}%)">${rects}</svg>`
 }
 
