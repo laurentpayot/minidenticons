@@ -1,5 +1,13 @@
 # Minidenticons changelog
 
+## 1.0.2
+
+_2022-02-25_
+
+### New features
+
+- Slightly smaller minified + compressed size
+
 ## 1.0.1
 
 _2022-02-11_
