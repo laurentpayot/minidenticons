@@ -1,5 +1,7 @@
 import assert from 'assert/strict'
 import { identicon } from './minidenticons.min.js'
+// import { identicon } from './no-custom-element.min.js'
+
 
 const COLLISION_TESTS_NUMBER = 10_000
 
