@@ -4,6 +4,12 @@ Super lightweight SVG identicon generator. No dependencies.
 
 ![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/minidenticons/main/minidenticons.min.js)
 ![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/minidenticons/main/minidenticons.min.js)
+<sup>(using the custom element)</sup>
+
+![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/minidenticons/main/no-custom-element.min.js)
+![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/minidenticons/main/no-custom-element.min.js)
+<sup>(custom element tree-shaken)</sup>
+
 [![dependencies](https://badgen.net/bundlephobia/dependency-count/minidenticons)](https://bundlephobia.com/package/minidenticons)
 [![types](https://badgen.net/npm/types/minidenticons)](https://github.com/laurentpayot/minidenticons/blob/main/index.d.ts)
 [![npm](https://badgen.net/npm/v/minidenticons)](https://www.npmjs.com/package/minidenticons)
@@ -22,6 +28,8 @@ Play with it [here](https://laurentpayot.github.io/minidenticons/).
 ## On Browser
 
 Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
+
+### Using the `identicon-svg` custom element
 
 Import the `identicon-svg` custom element from the `minidenticons.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance, since you don’t have to connect to the CDN).
 
@@ -46,9 +54,7 @@ For instance with the `alienHead66` username you will get the following identico
 
 - The white space around the colored squares is here to allow uncropped circle avatars like the ones you can see in [the demo](https://laurentpayot.github.io/minidenticons/).
 
-Alternatively, instead of `identiconSvg`, you can also import the [`identicon`](#usage) function described in the NodeJS section below and use it to generate SVG strings in your browser.
-
-### Color Customization
+#### Color Customization
 
 By default the color saturation and lightness are set to 50%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
 
@@ -61,6 +67,11 @@ Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a co
 ![Minidenticons light](minidenticons_light.png)
 ![Minidenticons dark](minidenticons_dark.png)
 ![Minidenticons pastel](minidenticons_pastel.png)
+
+### Using the `identicon` function
+
+Alternatively, instead of `identiconSvg`, you can also import the [`identicon`](#usage) function described in the NodeJS section below and use it to generate SVG strings in your browser.
+
 
 ## On NodeJS
 
