@@ -1,5 +1,13 @@
 # Minidenticons changelog
 
+## 1.0.3
+
+_2022-03-03_
+
+### Documentation update
+
+- Version bump to update the npm readme
+
 ## 1.0.2
 
 _2022-02-25_
