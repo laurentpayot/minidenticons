@@ -133,3 +133,7 @@ The `npm test` command results below show that you have roughly a 7% chance to g
 ## License
 
 [MIT](https://github.com/laurentpayot/minidenticons/blob/main/LICENSE)
+
+## Stargazers :heart:
+
+[![Stargazers repo roster for @laurentpayot/minidenticons](https://reporoster.com/stars/laurentpayot/minidenticons)](https://github.com/laurentpayot/minidenticons/stargazers)
