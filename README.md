@@ -39,7 +39,7 @@ Import the `identicon-svg` custom element from the `minidenticons.min.js` file. 
 </script>
 ```
 
-Then simply use `identicon-svg` tags with an `username` attribute :joy:
+Then simply use `identicon-svg` tags with a `username` attribute :joy:
 
 ```html
 <identicon-svg username="alienHead66">
