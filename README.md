@@ -97,7 +97,7 @@ The `identicon-svg` custom element should be tree-shaken from your bundle, for a
 identicon(username: string, saturation?: number|string, lightness?: number|string): string
 ```
 
-The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages, i.e numbers (or strings) between 0 and 100.
+The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
 
 ## Collisions
 
