@@ -10,7 +10,7 @@ const FNV_PRIME = 16777619
 const OFFSET_BASIS = 2166136261
 
 /**
- * @type {(str: string): number}
+ * @type {(str: string) => number}
  */
 // based on the FNV-1a hash algorithm, modified for *signed* 32 bit integers http://www.isthe.com/chongo/tech/comp/fnv/index.html
 function simpleHash(str) {
