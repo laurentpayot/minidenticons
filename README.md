@@ -99,6 +99,21 @@ identicon(username: string, saturation?: number|string, lightness?: number|strin
 
 The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
 
+### Framework integrations
+
+#### React
+
+Here are some CodePen examples on how to use Minidenticons as a React function component:
+
+- [Using the custom element](https://codepen.io/laurentpayot/pen/oNEPOww)
+- [Directly using the `identicon` function with React `dangerouslySetInnerHTML`](https://codepen.io/laurentpayot/pen/GRQXaGK)
+
+If you think of a different way to integrate Minidenticons into React feel free to comment [this issue](https://github.com/laurentpayot/minidenticons/issues/2). Thanks!
+
+#### Elm
+
+For [Elm](https://elm-lang.org/) enthusiasts there is a Minidenticons package on the Elm package repository: [`minidenticons-elm`](https://package.elm-lang.org/packages/laurentpayot/minidenticons-elm/latest).
+
 ## Collisions
 
 You will always get the same identicon for a given username. But it is not impossible to have different usernames with the same identicon. That's a [collision](https://en.wikipedia.org/wiki/Hash_collision).
