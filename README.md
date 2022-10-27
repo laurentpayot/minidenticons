@@ -99,9 +99,9 @@ identicon(username: string, saturation?: number|string, lightness?: number|strin
 
 The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
 
-### Framework integrations
+## Framework integrations
 
-#### React
+### React
 
 Here are some CodePen examples on how to use Minidenticons as a React function component:
 
@@ -110,7 +110,35 @@ Here are some CodePen examples on how to use Minidenticons as a React function c
 
 If you think of a different way to integrate Minidenticons into React feel free to comment [this issue](https://github.com/laurentpayot/minidenticons/issues/2). Thanks!
 
-#### Elm
+### Workbox
+
+In this example using [Workbox](https://developer.chrome.com/docs/workbox/), identicons are generated only once by the service worker and then stored in a cache for later use. They can be displayed and downloaded like normal images with a path ending with `identicons/<username>.svg`.
+
+```javascript
+import { registerRoute } from 'workbox-routing'
+import { identicon } from 'minidenticons'
+
+let identiconCache
+caches.open('identicons').then(cache => identiconCache = cache)
+
+// service worker initialization code
+// ...
+
+registerRoute(
+  /identicons\/[^\/]+\.svg$/,
+  async ({ event, url }) => {
+    let cachedResp = await caches.match(event.request)
+    if (cachedResp) return cachedResp
+    let username = url.pathname.match(/([^\/]+)\.svg$/)[1]
+    let generatedResp = new Response(identicon(username),
+      { headers: { "Content-Type": "image/svg+xml", "Vary": "Accept-Encoding" } })
+    identiconCache?.put(event).request, generatedResp.clone())
+    return generatedResp
+  }
+)
+```
+
+### Elm
 
 For [Elm](https://elm-lang.org/) enthusiasts there is a Minidenticons package on the Elm package repository: [`minidenticons-elm`](https://package.elm-lang.org/packages/laurentpayot/minidenticons-elm/latest).
 
