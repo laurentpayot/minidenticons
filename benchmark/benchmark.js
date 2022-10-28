@@ -22,6 +22,6 @@ export function benchmark() {
         t1 = performance.now()
         durations.push(t1 - t0)
     }
-    const averageRunDuration = durations.reduce((acc, d) => acc +d, 0) / RUNS_NUMBER
+    const averageRunDuration = durations.reduce((acc, d) => acc + d, 0) / RUNS_NUMBER
     return averageRunDuration
     }
