@@ -9,7 +9,7 @@ console.log(
     } identicons for ${
         USERNAME_LENGTH
     } characters random usernames:\n${
-        averageRunDuration.toFixed(3)
+        Math.round(averageRunDuration)
     } milliseconds (${
         RUNS_NUMBER
     } runs average)\n`)
