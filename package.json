@@ -40,7 +40,7 @@
     "size-nce": "echo \"\nWithout custom element:\n\nMinified gzip size:\t`gzip -9cn no-custom-element.min.js | wc -c` bytes\nMinified brotli size:\t`brotli -Zcn no-custom-element.min.js | wc -c` bytes\n\"",
     "build": "pnpm build-js && printf '_%.0s' {1..40} && pnpm --silent size && pnpm --silent size-nce",
     "test": "node tests",
-    "perf": "node perf",
+    "benchmark:node": "node benchmark-node",
     "preversion": "pnpm build && pnpm test",
     "postversion": "git push && git push --tags && pnpm publish",
     "serve": "python3 -m http.server"
