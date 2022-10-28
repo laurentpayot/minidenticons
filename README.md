@@ -179,7 +179,7 @@ Minidenticons are *fast* :racing_car:
 
 ### On Browser
 
-To see how long it takes to generate 300 identicons for a big page try out the [online benchmark](./benchmark/browser.html).
+To see how long it takes to generate 300 identicons for a big page try out the [online benchmark](https://laurentpayot.github.io/minidenticons/benchmark/browser.html).
 
 ### On NodeJS
 
