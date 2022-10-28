@@ -2,7 +2,7 @@ import { identicon } from '../minidenticons.min.js'
 
 export const USERNAME_LENGTH = 15
 export const IDENTICONS_PER_PAGE = 300
-export const RUNS_NUMBER = 1_000
+export const RUNS_NUMBER = 100
 
 function randomUsername(length) {
     let str = ""
