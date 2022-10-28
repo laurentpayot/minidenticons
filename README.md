@@ -175,15 +175,11 @@ The `npm test` command results below show that you have roughly a 7% chance to g
 
 ## Performance
 
-Minidenticons are *fast* :racing_car:
+Minidenticons are *fast*.
 
-### On Browser
+- To see how long it takes for your browser to generate 300 identicons (for a big page) try out the [online benchmark](https://laurentpayot.github.io/minidenticons/benchmark/browser.html).
 
-To see how long it takes to generate 300 identicons for a big page try out the [online benchmark](https://laurentpayot.github.io/minidenticons/benchmark/browser.html).
-
-### On NodeJS
-
-The same benchmark is available for NodeJS. Simply run `node benchmark/node` at the root of a Minidenticons git clone.
+- The same benchmark is available for NodeJS. Simply run `node benchmark/node` at the root of a Minidenticons git clone.
 
 ## License
 
