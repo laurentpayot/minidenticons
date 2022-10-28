@@ -175,7 +175,7 @@ The `npm test` command results below show that you have roughly a 7% chance to g
 
 ## Performance
 
-Minidenticons are *fast*.
+Minidenticons are *fast* :racing_car:
 
 ### On Browser
 
