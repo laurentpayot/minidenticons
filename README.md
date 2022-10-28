@@ -45,8 +45,8 @@ Then simply use `identicon-svg` tags with a `username` attribute :joy:
 <identicon-svg username="alienHead66">
 ```
 
-For instance with the `alienHead66` username you will get the following identicon (without the green border):
-<table style="border: solid green"><tr><td>
+For instance with the `alienHead66` username you will get the following identicon (without the border):
+<table><tr><td>
 <img src="alienHead66.svg" alt="alienHead66 identicon" width="150" height="150">
 </td></tr></table>
 
