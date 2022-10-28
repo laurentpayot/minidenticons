@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Minidenticons Benchmark</title>
+
+    <style type="text/css" media="screen, print">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #github-link {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        main {
+            text-align: center;
+        }
+        #result {
+            margin: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- module scripts are deferred -->
+<script type="module">
+    import { USERNAME_LENGTH, IDENTICONS_PER_PAGE, RUNS_NUMBER, benchmark } from './benchmark.js'
+
+
+    const averageRunDuration = benchmark()
+
+    document.querySelector('#result').innerHTML =
+        `<p>Time to generate ${
+            IDENTICONS_PER_PAGE
+        } identicons for ${
+            USERNAME_LENGTH
+        } characters random usernames:</p><p><strong>${
+            averageRunDuration.toFixed(3)
+        } milliseconds</strong> (${
+            RUNS_NUMBER
+        } runs average)</p>`
+
+</script>
+
+<a id="github-link" href="https://github.com/laurentpayot/minidenticons">
+    <img src="https://badgen.net/badge/icon/github?icon=github&label" alt="GitHub repository">
+</a>
+
+<main>
+    <h1>Minidenticons Benchmark</h1>
+    <div id="result">Running benchmark, please wait...</div>
+</main>
+
+</body>
+</html>
