@@ -173,6 +173,18 @@ The `npm test` command results below show that you have roughly a 7% chance to g
 4570 collisions out of 10000 (45.70%)
 ```
 
+## Performance
+
+Minidenticons are *fast*.
+
+### On Browser
+
+To see how long it takes to generate 300 identicons for a big page try out the [online benchmark](./benchmark/browser.html).
+
+### On NodeJS
+
+The same benchmark is available for NodeJS. Simply run `node benchmark/node` at the root of a Minidenticons git clone.
+
 ## License
 
 [MIT](https://github.com/laurentpayot/minidenticons/blob/main/LICENSE)
