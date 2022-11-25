@@ -15,7 +15,7 @@ Super lightweight SVG identicon generator. No dependencies.
 [![npm](https://badgen.net/npm/v/minidenticons)](https://www.npmjs.com/package/minidenticons)
 [![license](https://badgen.net/github/license/laurentpayot/minidenticons)](https://github.com/laurentpayot/minidenticons/blob/main/LICENSE)
 
-[![Minidenticons](minidenticons.png)](https://laurentpayot.github.io/minidenticons/)
+[![Minidenticons](img/minidenticons.png)](https://laurentpayot.github.io/minidenticons/)
 
 ## Why
 
@@ -47,10 +47,10 @@ Then simply use `identicon-svg` tags with a `username` attribute :joy:
 
 For instance with the `alienHead66` username you will get the following identicon (without the border):
 <table><tr><td>
-<img src="alienHead66.svg" alt="alienHead66 identicon" width="150" height="150">
+<img src="img/alienHead66.svg" alt="alienHead66 identicon" width="150" height="150">
 </td></tr></table>
 
-- Note that the picture above is resized. [By default identicons will take all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/alienHead66.svg)
+- Note that the picture above is resized. [By default identicons will take all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/alienHead66.svg)
 
 - The white space around the colored squares is here to allow uncropped circle avatars like the ones you can see in [the demo](https://laurentpayot.github.io/minidenticons/).
 
@@ -64,9 +64,9 @@ By default the color saturation and lightness are set to 50%. But you can change
 
 Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark, pastel or whatever :sunglasses:
 
-![Minidenticons light](minidenticons_light.png)
-![Minidenticons dark](minidenticons_dark.png)
-![Minidenticons pastel](minidenticons_pastel.png)
+![Minidenticons light](img/minidenticons_light.png)
+![Minidenticons dark](img/minidenticons_dark.png)
+![Minidenticons pastel](img/minidenticons_pastel.png)
 
 ### Using the `identicon` function
 
