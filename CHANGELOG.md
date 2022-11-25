@@ -1,5 +1,22 @@
 # Minidenticons changelog
 
+## 1.0.4
+
+_2022-11-25_
+
+### New features
+
+- Faster and smaller `identicon()` implementation
+- Node and browser benchmark
+
+### Documentation
+
+- Framework integrations
+  - React
+  - Workbox
+  - Elm
+- Performance
+
 ## 1.0.3
 
 _2022-03-03_
