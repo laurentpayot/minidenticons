@@ -15,13 +15,13 @@ function randomUsername(length) {
 export function benchmark() {
     const durations = []
     let username, t0, t1
-    for (let i = 0; i < IDENTICONS_PER_PAGE * RUNS_NUMBER; i++) {
+    [...Array(IDENTICONS_PER_PAGE * RUNS_NUMBER)].forEach(() => {
         username = randomUsername(USERNAME_LENGTH)
         t0 = performance.now()
         identicon(username)
         t1 = performance.now()
         durations.push(t1 - t0)
-    }
+    })
     const averageRunDuration = durations.reduce((acc, d) => acc + d, 0) / RUNS_NUMBER
     return averageRunDuration
     }
