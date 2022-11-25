@@ -26,13 +26,15 @@ export function identicon(username, saturation=DEFAULT_SATURATION, lightness=DEF
     const hash = simpleHash(username)
     // dividing hash by FNV_PRIME to get last XOR result for better color randomness (will be an integer except for empty string hash)
     const hue = ((hash / FNV_PRIME) % COLORS_NB) * (360 / COLORS_NB)
-    const rects = [...Array(username ? 25 : 0).keys()]
+    return [...Array(username ? 25 : 0)].reduce((acc, e, i) =>
         // 2 + ((3 * 5 - 1) - modulo) to concentrate squares at the center
-        .map(i => hash % (16 - i % 15) < SQUARE_DENSITY ?
-            `<rect x="${i > 14 ? 7 - ~~(i/5) : ~~(i/5)}" y="${i % 5}" width="1" height="1"/>` : '')
-        .join('')
-    // xmlns attribute added in case of SVG file generation https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg#sect1
-    return `<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="hsl(${hue} ${saturation}% ${lightness}%)">${rects}</svg>`
+        hash % (16 - i % 15) < SQUARE_DENSITY ?
+            acc + `<rect x="${i > 14 ? 7 - ~~(i / 5) : ~~(i / 5)}" y="${i % 5}" width="1" height="1"/>`
+        : acc,
+        // xmlns attribute added in case of SVG file generation https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg#sect1
+        `<svg viewBox="-1.5 -1.5 8 8" xmlns="http://www.w3.org/2000/svg" fill="hsl(${hue} ${saturation}% ${lightness}%)">`
+    )
+    + '</svg>'
 }
 
 /**
