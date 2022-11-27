@@ -1,6 +1,6 @@
 {
   "name": "minidenticons",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Super lightweight SVG identicon (icon avatar) generator",
   "author": "Laurent Payot",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "index.d.ts"
   ],
   "engines": {
-    "node": ">=13.2.0"
+    "node": ">=14.0.0"
   },
   "scripts": {
     "build-js": "terser minidenticons.js --compress module=true --mangle module=true --source-map --output minidenticons.min.js",
@@ -41,7 +41,7 @@
     "build": "pnpm build-js && printf '_%.0s' {1..40} && pnpm no-custom-element && pnpm --silent size && pnpm --silent size-nce",
     "test": "node tests",
     "benchmark": "node benchmark/node",
-    "prepublish": "pnpm build && pnpm test && git push && git push --tags",
+    "prepublish": "pnpm build && pnpm test && git push --tags",
     "serve": "python3 -m http.server"
   },
   "devDependencies": {

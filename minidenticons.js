@@ -41,8 +41,7 @@ export function identicon(username, saturation=DEFAULT_SATURATION, lightness=DEF
  * @type {void}
  */
 export const identiconSvg =
-    // optional chaining only available on node 14+
-    globalThis.customElements && /*@__PURE__*/customElements.define('identicon-svg',
+    /*@__PURE__*/globalThis.customElements?.define('identicon-svg',
         class extends HTMLElement {
             connectedCallback() { this.identiconSvg() }
             attributeChangedCallback() { this.identiconSvg() }

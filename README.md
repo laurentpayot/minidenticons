@@ -75,7 +75,7 @@ Alternatively, instead of `identiconSvg`, you can also import the [`identicon`](
 
 ## On NodeJS
 
-Be sure to use a NodeJS version greater or equal to **13.2.0** to support [ES modules](https://nodejs.org/api/esm.html).
+Be sure to use a NodeJS version greater or equal to **14.0.0**.
 
 ### Installation
 

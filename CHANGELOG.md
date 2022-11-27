@@ -1,5 +1,17 @@
 # Minidenticons changelog
 
+## 2.0.0
+
+_2022-11-27_
+
+### Breaking change
+
+- Dropping support for NodeJS versions below 14.0.0
+
+### New features
+
+- Slightly reduced custom element size
+
 ## 1.0.4
 
 _2022-11-25_
