@@ -35,7 +35,7 @@ Import the `identicon-svg` custom element from the `minidenticons.min.js` file. 
 
 ```html
 <script type="module">
-  import { identiconSvg } from 'https://unpkg.com/minidenticons@1.0.4/minidenticons.min.js'
+  import { identiconSvg } from 'https://unpkg.com/minidenticons@2.0.0/minidenticons.min.js'
 </script>
 ```
 
