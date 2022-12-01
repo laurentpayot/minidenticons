@@ -127,10 +127,10 @@ caches.open('identicons').then(cache => identiconCache = cache)
 registerRoute(
   /identicons\/[^\/]+\.svg$/,
   async ({ url }) => {
-    let cachedResp = await caches.match(url)
+    const cachedResp = await caches.match(url)
     if (cachedResp) return cachedResp
-    let username = url.pathname.match(/([^\/]+)\.svg$/)[1]
-    let generatedResp = new Response(identicon(username),
+    const username = url.pathname.match(/([^\/]+)\.svg$/)[1]
+    const generatedResp = new Response(identicon(username),
       { headers: { "Content-Type": "image/svg+xml", "Vary": "Accept-Encoding" } })
     identiconCache?.put(url, generatedResp.clone())
     return generatedResp
