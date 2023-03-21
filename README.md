@@ -31,7 +31,7 @@ Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-bro
 
 ### Using the `identicon-svg` custom element
 
-Import the `identicon-svg` custom element from the `minidenticons.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance, since you don’t have to connect to the CDN).
+Import the `identicon-svg` custom element from the `minidenticons.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
 
 ```html
 <script type="module">
