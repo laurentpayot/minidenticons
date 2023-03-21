@@ -6,7 +6,7 @@ _2023-03-21_
 
 ### New features
 
-- Build using the latest Terser version: safest but slightly increased size
+- Built using the latest Terser version: safest but slightly increased size
 
 ### Documentation update
 
