@@ -1,5 +1,18 @@
 # Minidenticons changelog
 
+## 2.0.1
+
+_2023-03-21_
+
+### New features
+
+- Build using the latest Terser version: safest but slightly increased size
+
+### Documentation update
+
+- GDPR notice
+- Workbox example fix
+
 ## 2.0.0
 
 _2022-11-27_
