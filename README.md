@@ -19,7 +19,7 @@ Super lightweight SVG identicon generator. No dependencies.
 
 ## Why
 
-Generate identicons (pixelated avatars) on the client from usernames instead of fetching images from a server!
+Generate identicons (pixelated avatars) on the client from usernames instead of fetching images from a server. Much faster, saves bandwidth and [GDPR compliant](https://gdpr.eu/eu-gdpr-personal-data/)!
 
 ## Live Demo :video_game:
 
