@@ -23,8 +23,19 @@
   "homepage": "https://laurentpayot.github.io/minidenticons",
   "type": "module",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./minidenticons.js"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./minidenticons.js"
+      }
+    }
+  },
   "main": "./minidenticons.js",
-  "exports": "./minidenticons.js",
   "types": "./index.d.ts",
   "files": [
     "minidenticons*.js*",
