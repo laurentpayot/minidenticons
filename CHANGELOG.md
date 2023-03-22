@@ -1,5 +1,13 @@
 # Minidenticons changelog
 
+## 2.0.2
+
+_2023-03-22_
+
+### Bug Fixes
+
+- New exports syntax to calm TypeScript down when using `--moduleResolution bundler`
+
 ## 2.0.1
 
 _2023-03-21_
