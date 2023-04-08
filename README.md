@@ -103,12 +103,32 @@ The `identicon` function will return a SVG string generated from its username st
 
 ### React
 
-Here are some CodePen examples on how to use Minidenticons as a React function component:
+The following [JavaScript example](https://codepen.io/laurentpayot/pen/RweNNQR) uses `useMemo` to memoize the identicon (store it in memory so that it does not need to be recalculated):
 
-- [Using the custom element](https://codepen.io/laurentpayot/pen/oNEPOww)
-- [Directly using the `identicon` function with React `dangerouslySetInnerHTML`](https://codepen.io/laurentpayot/pen/GRQXaGK)
+```js
+import { identicon } from 'minidenticons'
+import { useMemo } from 'react'
 
-If you think of a different way to integrate Minidenticons into React feel free to comment [this issue](https://github.com/laurentpayot/minidenticons/issues/2). Thanks!
+const IdenticonImg = ({ username, saturation, lightness, ...props }) => {
+  const svgText = useMemo(
+    () => identicon(username, saturation, lightness),
+    [username, saturation, lightness]
+  )
+  return (
+    <img
+      src={`data:image/svg+xml;utf8,${encodeURIComponent(svgText)}`}
+      alt={username}
+      {...props}
+    />
+  )
+}
+```
+You can then use your react component like so (all props except `username` are optional):
+
+```html
+<IdenticonImg username="alienHead66" width="150" saturation="90" lightness="50" />
+```
+For a TypeScript version of this example see the [original issue comment](https://github.com/laurentpayot/minidenticons/issues/2#issuecomment-1485545388) by [Dan Yishai](https://github.com/danyi1212).
 
 ### Workbox
 
