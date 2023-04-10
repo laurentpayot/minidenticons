@@ -46,13 +46,13 @@ export const identiconSvg =
         class IdenticonSvg extends HTMLElement {
             static observedAttributes = ['username', 'saturation', 'lightness']
             static memo = {}
-            isConnected = false
+            #isConnected = false
             connectedCallback() {
                 this.identiconSvg()
-                this.isConnected = true
+                this.#isConnected = true
             }
             // attributeChangedCallback() is called for every observed attribute before connectedCallback()
-            attributeChangedCallback() { if (this.isConnected) this.identiconSvg() }
+            attributeChangedCallback() { if (this.#isConnected) this.identiconSvg() }
             identiconSvg() {
                 const args = IdenticonSvg.observedAttributes
                                 .map(key => this.getAttribute(key) || undefined)
