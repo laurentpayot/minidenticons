@@ -1,5 +1,21 @@
 # Minidenticons changelog
 
+## 2.1.0
+
+_2023-04-10_
+
+### New features
+
+- Custom element performance
+  - Fixed `attributeChangedCallback()` being called 3 times after `connectedCallback()`: 4 times faster!
+  - identicon memoization (previous identicons are not recalculated)
+
+- Sticking to Terser version 5.16.2 for better minification results
+
+### Documentation update
+
+- React example with SVG identicon inside `img` tag `src` attribute and React `useMemo` for memoization. See the [original issue comment](https://github.com/laurentpayot/minidenticons/issues/2#issuecomment-1485545388) by [Dan Yishai](https://github.com/danyi1212).
+
 ## 2.0.2
 
 _2023-03-22_
