@@ -103,7 +103,7 @@ The `identicon` function will return a SVG string generated from its username st
 
 ### React
 
-The following [JavaScript example](https://codepen.io/laurentpayot/pen/RweNNQR) uses `useMemo` to memoize the identicon (store it in memory so that it does not need to be recalculated):
+The following React component inserts the identicon into an `img` tag `src` attribute. It also uses React `useMemo` to memoize the identicon (store it in memory so that it does not need to be recalculated).
 
 ```js
 import { identicon } from 'minidenticons'
@@ -114,13 +114,13 @@ const IdenticonImg = ({ username, saturation, lightness, ...props }) => {
     () => 'data:image/svg+xml;utf8,' + encodeURIComponent(identicon(username, saturation, lightness)),
     [username, saturation, lightness]
   )
-  return (<img src={svgURI} {...props} />)
+  return (<img src={svgURI} alt={username} {...props} />)
 }
 ```
-You can then use your react component with `img` attributes along with minidenticons ones (all props except `username` are optional):
+You can then use this component with `img` props such as `width` and `height` along with minidenticons ones. All props except `username` are optional.
 
 ```html
-<IdenticonImg username="alienHead66" width="150" saturation="90" lightness="50" />
+<IdenticonImg username="alienHead66" saturation="90" width="150" height="150" />
 ```
 For a TypeScript version of this example see the [original issue comment](https://github.com/laurentpayot/minidenticons/issues/2#issuecomment-1485545388) by [Dan Yishai](https://github.com/danyi1212).
 
