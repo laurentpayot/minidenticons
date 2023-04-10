@@ -43,7 +43,7 @@
     "index.d.ts"
   ],
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=15.14.0"
   },
   "scripts": {
     "build-js": "terser minidenticons.js --compress module=true --mangle module=true --source-map --output minidenticons.min.js",

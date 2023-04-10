@@ -77,7 +77,7 @@ The `identicon` function will return a SVG string generated from its username st
 
 ### NodeJS
 
-Be sure to use a NodeJS version greater or equal to **14.0.0**.
+Be sure to use a NodeJS version greater or equal to **15.14.0**.
 
 #### Installation
 
