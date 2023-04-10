@@ -8,7 +8,7 @@ Super lightweight SVG identicon generator. No dependencies.
 
 ![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/minidenticons/main/minidenticons.min.js)
 ![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/minidenticons/main/minidenticons.min.js)
-<sup>(using the included memoized custom element)</sup>
+<sup>(using the included custom element)</sup>
 
 [![dependencies](https://badgen.net/bundlephobia/dependency-count/minidenticons)](https://bundlephobia.com/package/minidenticons)
 [![types](https://badgen.net/npm/types/minidenticons)](https://github.com/laurentpayot/minidenticons/blob/main/index.d.ts)
@@ -25,13 +25,9 @@ Generate identicons (pixelated avatars) on the client from usernames instead of 
 
 Play with it [here](https://laurentpayot.github.io/minidenticons/).
 
-## On Browser
+## Basic usage with the included custom element
 
-Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
-
-### Using the `identicon-svg` custom element
-
-Import the `identicon-svg` custom element from the `minidenticons.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
+Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers. Import the `identiconSvg` custom element from the `minidenticons.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
 
 ```html
 <script type="module">
@@ -50,11 +46,11 @@ For instance with the `alienHead66` username you will get the following identico
 <img src="img/alienHead66.svg" alt="alienHead66 identicon" width="150" height="150">
 </td></tr></table>
 
-- Note that the picture above is resized. [By default identicons will take all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/alienHead66.svg)
+- Note that the picture above is resized. By default custom elements identicons will take [all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/alienHead66.svg)
 
 - The white space around the colored squares is here to allow uncropped circle avatars like the ones you can see in [the demo](https://laurentpayot.github.io/minidenticons/).
 
-#### Color Customization
+- Custom element identicons are [memoized](https://en.wikipedia.org/wiki/Memoization) (stored in memory so that it does not need to be recalculated).
 
 By default the color saturation and lightness are set to 50%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
 
@@ -68,30 +64,10 @@ Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a co
 ![Minidenticons dark](img/minidenticons_dark.png)
 ![Minidenticons pastel](img/minidenticons_pastel.png)
 
-### Using the `identicon` function
+## Advanced usage with the `identicon()` function
 
-Alternatively, instead of `identiconSvg`, you can also import the [`identicon`](#usage) function described in the NodeJS section below and use it to generate SVG strings in your browser.
+Instead of using the custom element, you can also import the `identicon()` function use it to generate SVG strings in your client (or your server).
 
-
-## On NodeJS
-
-Be sure to use a NodeJS version greater or equal to **14.0.0**.
-
-### Installation
-
-```bash
-npm install minidenticons
-```
-
-### Import
-
-```javascript
-import { identicon } from 'minidenticons'
-```
-
-The `identicon-svg` custom element should be tree-shaken from your bundle, for an even smaller size of minidenticons :grin:
-
-### Usage
 
 ```typescript
 identicon(username: string, saturation?: number|string, lightness?: number|string): string
@@ -99,11 +75,27 @@ identicon(username: string, saturation?: number|string, lightness?: number|strin
 
 The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
 
-## Framework integrations
+### NodeJS
+
+Be sure to use a NodeJS version greater or equal to **14.0.0**.
+
+#### Installation
+
+```bash
+npm install minidenticons
+```
+
+#### Import
+
+```javascript
+import { identicon } from 'minidenticons'
+```
+
+The `identiconSvg` custom element should be tree-shaken from your bundle, for an even smaller size of minidenticons :grin:
 
 ### React
 
-The following React component inserts the identicon into an `img` tag `src` attribute. It also uses React `useMemo` to memoize the identicon (store it in memory so that it does not need to be recalculated).
+The following React component example inserts the identicon into an `img` tag `src` attribute. It also uses React `useMemo` to memoize the identicon.
 
 ```jsx
 import { identicon } from 'minidenticons'
@@ -144,7 +136,7 @@ registerRoute(
 )
 ```
 
-### Elm
+## Elm
 
 For [Elm](https://elm-lang.org/) enthusiasts there is a Minidenticons package on the Elm package repository: [`minidenticons-elm`](https://package.elm-lang.org/packages/laurentpayot/minidenticons-elm/latest).
 
