@@ -40,32 +40,26 @@ export function identicon(username="", saturation=DEFAULT_SATURATION, lightness=
 /**
  * @type {void}
  */
-export const identiconImg =
+export const identiconSvg =
     // declared as a pure function to be tree-shaken by the bundler
-    /*@__PURE__*/globalThis.customElements?.define('identicon-img',
-        class IdenticonImg extends HTMLElement {
+    /*@__PURE__*/globalThis.customElements?.define('identicon-svg',
+        class IdenticonSvg extends HTMLElement {
             static observedAttributes = ['username', 'saturation', 'lightness']
             static memo = {}
             isConnected = false
             connectedCallback() {
-                this.identiconImg()
+                this.identiconSvg()
                 this.isConnected = true
             }
             // attributeChangedCallback() is called for every observed attribute before connectedCallback()
-            attributeChangedCallback() { if (this.isConnected) this.identiconImg() }
-            identiconImg() {
-                const img = document.createElement('img')
-                this.getAttributeNames().forEach(key => {
-                    if (!IdenticonImg.observedAttributes.includes(key))
-                        img[key] = this.getAttribute(key)
-                })
-                const args = IdenticonImg.observedAttributes
+            attributeChangedCallback() { if (this.isConnected) this.identiconSvg() }
+            identiconSvg() {
+                const args = IdenticonSvg.observedAttributes
                                 .map(key => this.getAttribute(key) || undefined)
                 const memoKey = args.join(',')
-                img.src = IdenticonImg.memo[memoKey] ??=
+                this.innerHTML = IdenticonSvg.memo[memoKey] ??=
                     // @ts-ignore
-                    'data:image/svg+xml;utf8,' + encodeURIComponent(identicon(...args))
-                this.appendChild(img)
+                    identicon(...args)
             }
         }
     )

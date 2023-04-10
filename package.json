@@ -47,7 +47,7 @@
   },
   "scripts": {
     "build-js": "terser minidenticons.js --compress module=true --mangle module=true --source-map --output minidenticons.min.js",
-    "no-custom-element": "cat minidenticons.min.js | sed 's/export const identiconImg=.*$//' > no-custom-element.min.js",
+    "no-custom-element": "cat minidenticons.min.js | sed 's/export const identiconSvg=.*$//' > no-custom-element.min.js",
     "size": "echo \"\n\n\nMinified gzip size:\t`gzip -9cn minidenticons.min.js | wc -c` bytes\nMinified brotli size:\t`brotli -Zcn minidenticons.min.js | wc -c` bytes\n\"",
     "size-nce": "echo \"\nWithout custom element:\n\nMinified gzip size:\t`gzip -9cn no-custom-element.min.js | wc -c` bytes\nMinified brotli size:\t`brotli -Zcn no-custom-element.min.js | wc -c` bytes\n\"",
     "build": "pnpm build-js && printf '_%.0s' {1..40} && pnpm no-custom-element && pnpm --silent size && pnpm --silent size-nce",
@@ -57,6 +57,6 @@
     "serve": "python3 -m http.server"
   },
   "devDependencies": {
-    "terser": "^5.16.6"
+    "terser": "5.16.2"
   }
 }

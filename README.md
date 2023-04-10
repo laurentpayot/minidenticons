@@ -29,20 +29,20 @@ Play with it [here](https://laurentpayot.github.io/minidenticons/).
 
 Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers.
 
-### Using the `identicon-img` custom element
+### Using the `identicon-svg` custom element
 
-Import the `identicon-img` custom element from the `minidenticons.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
+Import the `identicon-svg` custom element from the `minidenticons.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
 
 ```html
 <script type="module">
-  import { identiconImg } from 'https://cdn.jsdelivr.net/npm/minidenticons@2.0.2/minidenticons.min.js'
+  import { identiconSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons@2.0.2/minidenticons.min.js'
 </script>
 ```
 
-Then simply use `identicon-img` tags with a `username` attribute :joy:
+Then simply use `identicon-svg` tags with a `username` attribute :joy:
 
 ```html
-<identicon-img username="alienHead66">
+<identicon-svg username="alienHead66">
 ```
 
 For instance with the `alienHead66` username you will get the following identicon (without the border):
@@ -59,7 +59,7 @@ For instance with the `alienHead66` username you will get the following identico
 By default the color saturation and lightness are set to 50%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
 
 ```html
-<identicon-img username="alienHead66" saturation="95" lightness="60">
+<identicon-svg username="alienHead66" saturation="95" lightness="60">
 ```
 
 Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark, pastel or whatever :sunglasses:
@@ -70,7 +70,7 @@ Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a co
 
 ### Using the `identicon` function
 
-Alternatively, instead of `identiconImg`, you can also import the [`identicon`](#usage) function described in the NodeJS section below and use it to generate SVG strings in your browser.
+Alternatively, instead of `identiconSvg`, you can also import the [`identicon`](#usage) function described in the NodeJS section below and use it to generate SVG strings in your browser.
 
 
 ## On NodeJS
@@ -89,7 +89,7 @@ npm install minidenticons
 import { identicon } from 'minidenticons'
 ```
 
-The `identicon-img` custom element should be tree-shaken from your bundle, for an even smaller size of minidenticons :grin:
+The `identicon-svg` custom element should be tree-shaken from your bundle, for an even smaller size of minidenticons :grin:
 
 ### Usage
 
