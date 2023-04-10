@@ -94,7 +94,7 @@ The `identiconSvg` custom element should be tree-shaken from your bundle, for an
 
 ### React
 
-The following React component example inserts the identicon into an `img` tag `src` attribute. It also uses React `useMemo` to memoize the identicon.
+The following [React component example](https://codepen.io/laurentpayot/pen/RweNNQR) inserts the identicon into an `img` tag `src` attribute. It also uses React `useMemo` to memoize the identicon.
 
 ```jsx
 import { identicon } from 'minidenticons'
