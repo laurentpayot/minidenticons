@@ -30,7 +30,7 @@
         #username-input {
             margin-top: 100px;
         }
-        identicon-svg {
+        identicon-img {
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -38,7 +38,7 @@
             display: inline-block;
             margin: 5px;
         }
-        main + identicon-svg {
+        main + identicon-img {
             width: 80px;
             height: 80px;
             display: block;
@@ -50,7 +50,7 @@
 <body>
 
 <script type="module">
-    import { identiconSvg } from "./minidenticons.min.js"
+    import { identiconImg } from "./minidenticons.js"
 
     const main = document.querySelector('main')
     const usernameInput = main.querySelector('#username-input')
@@ -63,9 +63,8 @@
         saturationLabel.textContent = `Saturation ${saturationInput.value}%`
         lightnessLabel.textContent = `Lightness ${lightnessInput.value}%`
         main.insertAdjacentHTML("afterend",
-            `<identicon-svg username="${usernameInput.value}"
-                title='"${usernameInput.value.replaceAll("'", "&apos;")}",
-                        ${saturationInput.value}, ${lightnessInput.value}'
+            `<identicon-img username="${usernameInput.value}"
+                title='"${usernameInput.value.replaceAll("'", "&apos;")}", ${saturationInput.value}, ${lightnessInput.value}'
                 saturation="${saturationInput.value}" lightness="${lightnessInput.value}"
             >`
         )

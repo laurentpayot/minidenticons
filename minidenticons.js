@@ -22,7 +22,7 @@ function simpleHash(str) {
 /**
  * @type {import('.').identicon}
  */
-export function identicon(username, saturation=DEFAULT_SATURATION, lightness=DEFAULT_LIGHTNESS) {
+export function identicon(username="", saturation=DEFAULT_SATURATION, lightness=DEFAULT_LIGHTNESS) {
     const hash = simpleHash(username)
     // dividing hash by FNV_PRIME to get last XOR result for better color randomness (will be an integer except for empty string hash)
     const hue = ((hash / FNV_PRIME) % COLORS_NB) * (360 / COLORS_NB)
@@ -40,18 +40,32 @@ export function identicon(username, saturation=DEFAULT_SATURATION, lightness=DEF
 /**
  * @type {void}
  */
-export const identiconSvg =
-    /*@__PURE__*/globalThis.customElements?.define('identicon-svg',
-        class extends HTMLElement {
-            connectedCallback() { this.identiconSvg() }
-            attributeChangedCallback() { this.identiconSvg() }
-            static get observedAttributes() { return ['username', 'saturation', 'lightness'] }
-            identiconSvg() {
-                this.innerHTML = identicon(
-                    this.getAttribute('username') || "",
-                    this.getAttribute('saturation') || DEFAULT_SATURATION,
-                    this.getAttribute('lightness') || DEFAULT_LIGHTNESS
-                )
+export const identiconImg =
+    // declared as a pure function to be tree-shaken by the bundler
+    /*@__PURE__*/globalThis.customElements?.define('identicon-img',
+        class IdenticonImg extends HTMLElement {
+            static observedAttributes = ['username', 'saturation', 'lightness']
+            static memo = {}
+            isConnected = false
+            connectedCallback() {
+                this.identiconImg()
+                this.isConnected = true
+            }
+            // attributeChangedCallback() is called for every observed attribute before connectedCallback()
+            attributeChangedCallback() { if (this.isConnected) this.identiconImg() }
+            identiconImg() {
+                const img = document.createElement('img')
+                this.getAttributeNames().forEach(key => {
+                    if (!IdenticonImg.observedAttributes.includes(key))
+                        img[key] = this.getAttribute(key)
+                })
+                const args = IdenticonImg.observedAttributes
+                                .map(key => this.getAttribute(key) || undefined)
+                const memoKey = args.join(',')
+                img.src = IdenticonImg.memo[memoKey] ??=
+                    // @ts-ignore
+                    'data:image/svg+xml;utf8,' + encodeURIComponent(identicon(...args))
+                this.appendChild(img)
             }
         }
     )
