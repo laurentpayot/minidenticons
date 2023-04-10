@@ -66,14 +66,13 @@ Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a co
 
 ## Advanced usage with the `identicon()` function
 
-Instead of using the custom element, you can also import the `identicon()` function use it to generate SVG strings in your client (or your server).
-
+Instead of using the custom element, you can also use the `identicon()` function to generate SVG strings in your client (or your server).
 
 ```typescript
 identicon(username: string, saturation?: number|string, lightness?: number|string): string
 ```
 
-The `identicon` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
+The `identicon()` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
 
 ### NodeJS
 
