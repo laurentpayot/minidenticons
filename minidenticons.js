@@ -45,19 +45,19 @@ export const identiconSvg =
     /*@__PURE__*/globalThis.customElements?.define('identicon-svg',
         class IdenticonSvg extends HTMLElement {
             static observedAttributes = ['username', 'saturation', 'lightness']
-            static memo = {}
+            static #memo = {}
             #isConnected = false
             connectedCallback() {
-                this.identiconSvg()
+                this.#identiconSvg()
                 this.#isConnected = true
             }
             // attributeChangedCallback() is called for every observed attribute before connectedCallback()
-            attributeChangedCallback() { if (this.#isConnected) this.identiconSvg() }
-            identiconSvg() {
+            attributeChangedCallback() { if (this.#isConnected) this.#identiconSvg() }
+            #identiconSvg() {
                 const args = IdenticonSvg.observedAttributes
                                 .map(key => this.getAttribute(key) || undefined)
                 const memoKey = args.join(',')
-                this.innerHTML = IdenticonSvg.memo[memoKey] ??=
+                this.innerHTML = IdenticonSvg.#memo[memoKey] ??=
                     // @ts-ignore
                     identicon(...args)
             }
