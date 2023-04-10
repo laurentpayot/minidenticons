@@ -8,7 +8,7 @@ Super lightweight SVG identicon generator. No dependencies.
 
 ![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/minidenticons/main/minidenticons.min.js)
 ![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/minidenticons/main/minidenticons.min.js)
-<sup>(using the memoized custom element)</sup>
+<sup>(using the included memoized custom element)</sup>
 
 [![dependencies](https://badgen.net/bundlephobia/dependency-count/minidenticons)](https://bundlephobia.com/package/minidenticons)
 [![types](https://badgen.net/npm/types/minidenticons)](https://github.com/laurentpayot/minidenticons/blob/main/index.d.ts)
