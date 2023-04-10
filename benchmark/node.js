@@ -6,7 +6,7 @@ const averageRunDuration = benchmark()
 console.log(
     `\nTime to generate ${
         IDENTICONS_PER_PAGE
-    } identicons for ${
+    } identicon SVG strings for ${
         USERNAME_LENGTH
     } characters random usernames:\n${
         Math.round(averageRunDuration)
