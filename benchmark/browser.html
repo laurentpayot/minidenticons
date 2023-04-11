@@ -23,6 +23,14 @@
         #result {
             margin: 2rem;
         }
+        identicon-svg {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #EEF;
+            display: inline-block;
+            margin: 5px;
+        }
     </style>
 </head>
 
@@ -30,20 +38,32 @@
 
 <!-- module scripts are deferred -->
 <script type="module">
-    import { USERNAME_LENGTH, IDENTICONS_PER_PAGE, RUNS_NUMBER, benchmark } from './benchmark.js'
+    import { identiconSvg } from '../minidenticons.min.js'
+    import { benchmark, randomString } from './benchmark.js'
 
+    const TEST_NB = 100
+    const RUN_NB = 10
+    const USERNAME_LENGTH = 15
 
-    const averageRunDuration = benchmark()
+    const averageRunDuration = benchmark(
+        (username) => document.body.insertAdjacentHTML('beforeend',
+            `<identicon-svg username="${username}" saturation="100"></identicon-svg>`
+        ),
+        () => [ randomString(USERNAME_LENGTH) ],
+        (run) => document.body.insertAdjacentHTML('beforeend', `<p>Run ${run}</p>`),
+        TEST_NB,
+        RUN_NB
+    )
 
     document.querySelector('#result').innerHTML =
         `<p>Time to generate ${
-            IDENTICONS_PER_PAGE
-        } identicon SVG strings for ${
+            TEST_NB
+        } identicon custom elements for ${
             USERNAME_LENGTH
         } characters random usernames:</p><p><strong>${
             Math.round(averageRunDuration)
         } milliseconds</strong> (${
-            RUNS_NUMBER
+            RUN_NB
         } runs average)</p>`
 
 </script>
