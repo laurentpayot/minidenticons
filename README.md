@@ -38,7 +38,7 @@ Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-bro
 Then simply use `identicon-svg` tags with a `username` attribute :joy:
 
 ```html
-<identicon-svg username="alienHead66">
+<identicon-svg username="alienHead66"></identicon-svg>
 ```
 
 For instance with the `alienHead66` username you will get the following identicon (without the border):
@@ -52,10 +52,12 @@ For instance with the `alienHead66` username you will get the following identico
 
 - Custom element identicons are [memoized](https://en.wikipedia.org/wiki/Memoization) (stored in memory so that it does not need to be recalculated).
 
+- Like for all elements except [void elements](https://html.spec.whatwg.org/multipage/syntax.html#void-elements), the closing tag `</identicon-svg>` is required.
+
 By default the color saturation and lightness are set to 50%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
 
 ```html
-<identicon-svg username="alienHead66" saturation="95" lightness="60">
+<identicon-svg username="alienHead66" saturation="95" lightness="60"></identicon-svg>
 ```
 
 Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark, pastel or whatever :sunglasses:
