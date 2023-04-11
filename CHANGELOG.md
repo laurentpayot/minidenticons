@@ -1,5 +1,21 @@
 # Minidenticons changelog
 
+## 3.1.0
+
+_2023-04-11_
+
+### New features
+
+- 12 hue colors instead of 18 for easier distinction and better looking but at the cost of more collisions.
+
+### Breaking Changes
+
+- The color for a given username has changed. But the shape inside the identicon stays the same. Not bumping version to 4 as the version 3 was only released yesterday.
+
+### Documentation update
+
+- Custom element closing tag notice
+
 ## 3.0.0
 
 _2023-04-10_
@@ -118,4 +134,4 @@ _2022-02-10_
 
 ## 0.X.XX
 
-Various experiments.
+Various experiments…

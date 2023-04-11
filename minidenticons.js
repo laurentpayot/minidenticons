@@ -1,7 +1,7 @@
 // density of 4 for the lowest probability of collision
 const SQUARE_DENSITY = 4
-// 18 different colors only for easy distinction
-const COLORS_NB = 18
+// 12 different hue colors only for easy distinction
+const COLORS_NB = 12
 const DEFAULT_SATURATION = 50
 const DEFAULT_LIGHTNESS = 50
 

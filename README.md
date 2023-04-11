@@ -148,37 +148,48 @@ You will always get the same identicon for a given username. But it is not impos
 Generated identicons are 5×5 pixels large with vertical symmetry, and can have 18 different hues for the same saturation and lightness.
 This means there are 2<sup>(3×5)</sup> × 18 = 589,824 different identicons possible, but actually much less because of the modulo-based algorithm used to get more colored pixels at the center of the identicon instead of having them scattered. So duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
 
-The `npm test` command results below show that you have roughly a 7% chance to generate a duplicate identicon when already using 1000 of them.
+The `npm test` command results below show that you have roughly a 10% chance to generate a duplicate identicon when already using 1000 of them.
 
 ```text
 0 collisions out of 100 (0.00%)
-0 collisions out of 200 (0.00%)
-2 collisions out of 300 (0.67%)
-6 collisions out of 400 (1.50%)
-11 collisions out of 500 (2.20%)
-21 collisions out of 600 (3.50%)
-38 collisions out of 700 (5.43%)
-49 collisions out of 800 (6.13%)
-55 collisions out of 900 (6.11%)
-66 collisions out of 1000 (6.60%)
-296 collisions out of 2000 (14.80%)
-589 collisions out of 3000 (19.63%)
-962 collisions out of 4000 (24.05%)
-1441 collisions out of 5000 (28.82%)
-1965 collisions out of 6000 (32.75%)
-2564 collisions out of 7000 (36.63%)
-3173 collisions out of 8000 (39.66%)
-3860 collisions out of 9000 (42.89%)
-4570 collisions out of 10000 (45.70%)
+5 collisions out of 200 (2.50%)
+11 collisions out of 300 (3.67%)
+19 collisions out of 400 (4.75%)
+27 collisions out of 500 (5.40%)
+34 collisions out of 600 (5.67%)
+50 collisions out of 700 (7.14%)
+59 collisions out of 800 (7.38%)
+87 collisions out of 900 (9.67%)
+101 collisions out of 1000 (10.10%)
+378 collisions out of 2000 (18.90%)
+811 collisions out of 3000 (27.03%)
+1282 collisions out of 4000 (32.05%)
+1896 collisions out of 5000 (37.92%)
+2546 collisions out of 6000 (42.43%)
+3243 collisions out of 7000 (46.33%)
+3969 collisions out of 8000 (49.61%)
+4750 collisions out of 9000 (52.78%)
+5569 collisions out of 10000 (55.69%)
 ```
 
 ## Performance
 
 Minidenticons are *fast*.
 
-- To see how long it takes for your browser to generate 100 identicons (for a big page) try out the [online benchmark](https://laurentpayot.github.io/minidenticons/benchmark/browser.html).
+### Custom element benchmark
 
-- The same benchmark is available for NodeJS. Simply run `node benchmark/node` at the root of a Minidenticons git clone.
+To see how long it takes for your browser to generate 100 identicon custom elements (for a big page) try out the [online browser benchmark](https://laurentpayot.github.io/minidenticons/benchmark/browser.html).
+
+### NodeJS benchmark
+
+Simply run `node benchmark/node` at the root of a Minidenticons git clone.
+
+On my machine I get the following result:
+
+```
+Time to generate 5000 identicon SVG strings for 15 characters random usernames:
+7 milliseconds (10 runs average)
+```
 
 ## License
 
