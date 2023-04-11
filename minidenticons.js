@@ -45,7 +45,8 @@ export const identiconSvg =
     /*@__PURE__*/globalThis.customElements?.define('identicon-svg',
         class IdenticonSvg extends HTMLElement {
             static observedAttributes = ['username', 'saturation', 'lightness']
-            static #memo = {}
+            // private fields to allow Terser mangling
+            static #memoized = {}
             #isConnected = false
             connectedCallback() {
                 this.#identiconSvg()
@@ -57,7 +58,7 @@ export const identiconSvg =
                 const args = IdenticonSvg.observedAttributes
                                 .map(key => this.getAttribute(key) || undefined)
                 const memoKey = args.join(',')
-                this.innerHTML = IdenticonSvg.#memo[memoKey] ??=
+                this.innerHTML = IdenticonSvg.#memoized[memoKey] ??=
                     // @ts-ignore
                     identicon(...args)
             }
