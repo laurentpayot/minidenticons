@@ -7,6 +7,7 @@ _2023-04-11_
 ### New features
 
 - 12 hue colors instead of 18 for easier distinction and better looking but at the cost of more collisions.
+- [Online custom element benchmark](https://laurentpayot.github.io/minidenticons/benchmark/browser.html)
 
 ### Breaking Changes
 
