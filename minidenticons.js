@@ -49,12 +49,12 @@ export const identiconSvg =
             static #memoized = {}
             #isConnected = false
             connectedCallback() {
-                this.#identiconSvg()
+                this.#setContent()
                 this.#isConnected = true
             }
             // attributeChangedCallback() is called for every observed attribute before connectedCallback()
-            attributeChangedCallback() { if (this.#isConnected) this.#identiconSvg() }
-            #identiconSvg() {
+            attributeChangedCallback() { if (this.#isConnected) this.#setContent() }
+            #setContent() {
                 const args = IdenticonSvg.observedAttributes
                                 .map(key => this.getAttribute(key) || undefined)
                 const memoKey = args.join(',')
