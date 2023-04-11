@@ -10,7 +10,7 @@ _2023-04-11_
 
 ### Breaking Changes
 
-- The color for a given username has changed. But the shape inside the identicon stays the same. Not bumping version to 4 as the version 3 was only released yesterday.
+- The color for a given username has changed. But the shape inside the identicon stays the same. Not bumping version to 4 as the version 3 was only released the day before.
 
 ### Documentation update
 
