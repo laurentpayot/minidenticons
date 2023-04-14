@@ -4,9 +4,7 @@
 
 _2023-04-14_
 
-### New features
-
-- Reverted to v3.1.0 (custom element size optimization was canceling v3 performance gain)
+Reverted to v3.1.0 (custom element size optimization was canceling v3 performance gain)
 
 ## 3.1.1
 
