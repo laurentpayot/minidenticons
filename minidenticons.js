@@ -49,7 +49,9 @@ export const identiconSvg =
             static #memoized = {}
             connectedCallback() { this.#setContent() }
             // attributeChangedCallback() is called for every observed attribute before connectedCallback()
-            attributeChangedCallback(name, oldValue) { if (oldValue !== null) this.#setContent() }
+            attributeChangedCallback(name, oldValue, newValue) {
+                if (oldValue !== newValue) this.#setContent()
+            }
             #setContent() {
                 const args = IdenticonSvg.observedAttributes
                                 .map(key => this.getAttribute(key) || undefined)
