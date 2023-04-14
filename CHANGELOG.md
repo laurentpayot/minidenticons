@@ -1,5 +1,17 @@
 # Minidenticons changelog
 
+## 3.1.1
+
+_2023-04-14_
+
+### New features
+
+- Slightly decreased custom element size
+
+### Documentation update
+
+- Note about the `identicon()` function itself not being memoized
+
 ## 3.1.0
 
 _2023-04-11_
