@@ -47,13 +47,9 @@ export const identiconSvg =
             static observedAttributes = ['username', 'saturation', 'lightness']
             // private fields to allow Terser mangling
             static #memoized = {}
-            #isConnected = false
-            connectedCallback() {
-                this.#setContent()
-                this.#isConnected = true
-            }
+            connectedCallback() { this.#setContent() }
             // attributeChangedCallback() is called for every observed attribute before connectedCallback()
-            attributeChangedCallback() { if (this.#isConnected) this.#setContent() }
+            attributeChangedCallback(name, oldValue) { if (oldValue !== null) this.#setContent() }
             #setContent() {
                 const args = IdenticonSvg.observedAttributes
                                 .map(key => this.getAttribute(key) || undefined)
