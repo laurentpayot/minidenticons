@@ -76,6 +76,8 @@ identicon(username: string, saturation?: number|string, lightness?: number|strin
 
 The `identicon()` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
 
+Note that the `identicon()` function itself is *not* memoized.
+
 ### NodeJS
 
 Be sure to use a NodeJS version greater or equal to **15.14.0**.
