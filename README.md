@@ -147,8 +147,8 @@ For [Elm](https://elm-lang.org/) enthusiasts there is a Minidenticons package on
 
 You will always get the same identicon for a given username. But it is not impossible to have different usernames with the same identicon. That's a [collision](https://en.wikipedia.org/wiki/Hash_collision).
 
-Generated identicons are 5×5 pixels large with vertical symmetry, and can have 18 different hues for the same saturation and lightness.
-This means there are 2<sup>(3×5)</sup> × 18 = 589,824 different identicons possible, but actually much less because of the modulo-based algorithm used to get more colored pixels at the center of the identicon instead of having them scattered. So duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
+Generated identicons are 5×5 pixels large with vertical symmetry, and can have 12 different hues for the same saturation and lightness.
+This means there are 2<sup>(3×5)</sup> × 12 = 393,216 different identicons possible, but actually much less because of the modulo-based algorithm used to get more colored pixels at the center of the identicon instead of having them scattered. So duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
 
 The `npm test` command results below show that you have roughly a 10% chance to generate a duplicate identicon when already using 1000 of them.
 
