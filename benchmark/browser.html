@@ -47,7 +47,7 @@
 
     const averageRunDuration = benchmark(
         (username) => document.body.insertAdjacentHTML('beforeend',
-            `<identicon-svg username="${username}" saturation="90"></identicon-svg>`
+            `<identicon-svg username="${username}" saturation="70"></identicon-svg>`
         ),
         () => [ randomString(USERNAME_LENGTH) ],
         (run) => document.body.insertAdjacentHTML('beforeend', `<p>Run ${run}</p>`),
