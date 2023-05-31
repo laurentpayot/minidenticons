@@ -4,16 +4,14 @@ const DEFAULT_SATURATION = 50
 const DEFAULT_LIGHTNESS = 50
 
 
-// based on the FNV-1a hash algorithm (using `>>> 0` for 32 bit unsigned integer conversion)
-// http://www.isthe.com/chongo/tech/comp/fnv/index.html
+// based on the FNV-1a hash algorithm http://www.isthe.com/chongo/tech/comp/fnv/index.html
 /**
  * @type {(str: string) => number}
  */
 function simpleHash(str) {
     return str.split('')
-        .reduce((hash, char) => (((hash ^ char.charCodeAt(0)) >>> 0) * 16777619) >>> 0, 2166136261)
-        // disregarding last 4 bits for better randomness
-        >>> 4
+        // `>>> 0` for 32 bit unsigned integer conversion, `>>> 2` to disregard last 4 bits for better randomness
+        .reduce((hash, char) => (((hash ^ char.charCodeAt(0)) >>> 0) * 16777619) >>> 2, 2166136261)
 }
 
 /**
