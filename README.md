@@ -148,30 +148,30 @@ For [Elm](https://elm-lang.org/) enthusiasts there is a Minidenticons package on
 You will always get the same identicon for a given username. But it is not impossible to have different usernames with the same identicon. That's a [collision](https://en.wikipedia.org/wiki/Hash_collision).
 
 Generated identicons are 5×5 pixels large with vertical symmetry, and can have 12 different hues for the same saturation and lightness.
-This means there are 2<sup>(3×5)</sup> × 12 = 393,216 different identicons possible, but actually much less because of the modulo-based algorithm used to get more colored pixels at the center of the identicon instead of having them scattered. So duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
+This means there are 2<sup>(3×5)</sup> × 12 = 393,216 different identicons possible, but duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
 
-The `npm test` command results below show that you have roughly a 10% chance to generate a duplicate identicon when already using 1000 of them.
+The `npm test` command results below show that you have roughly a 5% chance to generate a duplicate identicon when already using 10,000 of them.
 
 ```text
 0 collisions out of 100 (0.00%)
-5 collisions out of 200 (2.50%)
-11 collisions out of 300 (3.67%)
-19 collisions out of 400 (4.75%)
-27 collisions out of 500 (5.40%)
-34 collisions out of 600 (5.67%)
-50 collisions out of 700 (7.14%)
-59 collisions out of 800 (7.38%)
-87 collisions out of 900 (9.67%)
-101 collisions out of 1000 (10.10%)
-378 collisions out of 2000 (18.90%)
-811 collisions out of 3000 (27.03%)
-1282 collisions out of 4000 (32.05%)
-1896 collisions out of 5000 (37.92%)
-2546 collisions out of 6000 (42.43%)
-3243 collisions out of 7000 (46.33%)
-3969 collisions out of 8000 (49.61%)
-4750 collisions out of 9000 (52.78%)
-5569 collisions out of 10000 (55.69%)
+0 collisions out of 200 (0.00%)
+1 collisions out of 300 (0.33%)
+1 collisions out of 400 (0.25%)
+1 collisions out of 500 (0.20%)
+2 collisions out of 600 (0.33%)
+3 collisions out of 700 (0.43%)
+3 collisions out of 800 (0.38%)
+5 collisions out of 900 (0.56%)
+5 collisions out of 1000 (0.50%)
+24 collisions out of 2000 (1.20%)
+54 collisions out of 3000 (1.80%)
+91 collisions out of 4000 (2.27%)
+133 collisions out of 5000 (2.66%)
+180 collisions out of 6000 (3.00%)
+245 collisions out of 7000 (3.50%)
+313 collisions out of 8000 (3.91%)
+397 collisions out of 9000 (4.41%)
+493 collisions out of 10000 (4.93%)
 ```
 
 ## Performance

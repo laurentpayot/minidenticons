@@ -1,5 +1,23 @@
 # Minidenticons changelog
 
+# 4.0.0
+
+_2023-06-??_
+
+### Breaking Changes
+
+- New algorithm to get a lot more different identicons (10 times less collisions). The shapes generated are totally different from previous versions.
+
+### New features
+
+- Slightly decreased sizes
+
+### TODO
+
+- New default saturation and lightness??
+- tests
+- Docs: Initials avatar replacement note
+
 ## 3.1.2
 
 _2023-04-14_

@@ -1,22 +1,19 @@
-// density of 4 for the lowest probability of collision
-const SQUARE_DENSITY = 4
 // 12 different hue colors only for easy distinction
 const COLORS_NB = 12
 const DEFAULT_SATURATION = 50
 const DEFAULT_LIGHTNESS = 50
 
-// 32 bit FNV-1a hash parameters
-const FNV_PRIME = 16777619
-const OFFSET_BASIS = 2166136261
 
+// based on the FNV-1a hash algorithm (using `>>> 0` for 32 bit unsigned integer conversion)
+// http://www.isthe.com/chongo/tech/comp/fnv/index.html
 /**
  * @type {(str: string) => number}
  */
-// based on the FNV-1a hash algorithm, modified for *signed* 32 bit integers http://www.isthe.com/chongo/tech/comp/fnv/index.html
 function simpleHash(str) {
     return str.split('')
-        // >>> 0 for 32 bit unsigned integer conversion https://2ality.com/2012/02/js-integers.html
-        .reduce((hash, char) => ((hash ^ char.charCodeAt(0)) >>> 0) * FNV_PRIME, OFFSET_BASIS)
+        .reduce((hash, char) => (((hash ^ char.charCodeAt(0)) >>> 0) * 16777619) >>> 0, 2166136261)
+        // disregarding last 4 bits for better randomness
+        >>> 4
 }
 
 /**
@@ -24,11 +21,11 @@ function simpleHash(str) {
  */
 export function identicon(username="", saturation=DEFAULT_SATURATION, lightness=DEFAULT_LIGHTNESS) {
     const hash = simpleHash(username)
-    // dividing hash by FNV_PRIME to get last XOR result for better color randomness (will be an integer except for empty string hash)
-    const hue = ((hash / FNV_PRIME) % COLORS_NB) * (360 / COLORS_NB)
+    // console.log("%c" + hash.toString(2).padStart(32, "0"), "font-family:monospace") // uncomment to debug
+    const hue = (hash % COLORS_NB) * (360 / COLORS_NB)
     return [...Array(username ? 25 : 0)].reduce((acc, e, i) =>
-        // 2 + ((3 * 5 - 1) - modulo) to concentrate squares at the center
-        hash % (16 - i % 15) < SQUARE_DENSITY ?
+        // testing the 15 lowest weight bits of the hash
+        hash & (1 << (i % 15)) ?
             acc + `<rect x="${i > 14 ? 7 - ~~(i / 5) : ~~(i / 5)}" y="${i % 5}" width="1" height="1"/>`
         : acc,
         // xmlns attribute added in case of SVG file generation https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg#sect1
