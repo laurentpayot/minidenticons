@@ -1,1 +1,1 @@
-export function identicon(username: string, saturation?: number|string, lightness?: number|string): string
+export function minidenticon(seed: string, saturation?: number|string, lightness?: number|string): string

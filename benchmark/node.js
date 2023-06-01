@@ -1,4 +1,4 @@
-import { identicon } from '../minidenticons.min.js'
+import { minidenticon } from '../minidenticons.min.js'
 import { benchmark, randomString } from './benchmark.js'
 
 const TEST_NB = 5_000

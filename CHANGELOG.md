@@ -6,17 +6,23 @@ _2023-06-??_
 
 ### Breaking Changes
 
+- identicon function
 - New algorithm to get a lot more different identicons (10 times less collisions). The shapes generated are totally different from previous versions.
+  - call `minidenticon()` instead of  `identicon()`
+
+- Custom element
+  - import `minidenticonSvg` instead of `minidenticonSvg`
+  - use tag `minidenticon-svg` instead of `identicon-svg`
+  - Slightly decreased size
 
 ### New features
 
-- Slightly decreased sizes
+- Slightly decreased custom element size
 
 ### TODO
 
 - New default saturation and lightness??
 - tests
-- Docs: Initials avatar replacement note
 
 ## 3.1.2
 

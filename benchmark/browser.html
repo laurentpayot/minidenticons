@@ -23,11 +23,11 @@
         #result {
             margin: 2rem;
         }
-        identicon-svg {
+        minidenticon-svg {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: #EEF;
+            background-color: #EEE;
             display: inline-block;
             margin: 5px;
         }
@@ -38,7 +38,7 @@
 
 <!-- module scripts are deferred -->
 <script type="module">
-    import { identiconSvg } from '../minidenticons.min.js'
+    import { minidenticonSvg } from '../minidenticons.min.js'
     import { benchmark, randomString } from './benchmark.js'
 
     const TEST_NB = 100
@@ -47,7 +47,7 @@
 
     const averageRunDuration = benchmark(
         (username) => document.body.insertAdjacentHTML('beforeend',
-            `<identicon-svg username="${username}" saturation="70"></identicon-svg>`
+            `<minidenticon-svg username="${username}" saturation="80"></minidenticon-svg>`
         ),
         () => [ randomString(USERNAME_LENGTH) ],
         (run) => document.body.insertAdjacentHTML('beforeend', `<p>Run ${run}</p>`),
@@ -58,7 +58,7 @@
     document.querySelector('#result').innerHTML =
         `<p>Time to display ${
             TEST_NB
-        } identicon custom elements for ${
+        } minidenticon custom elements for ${
             USERNAME_LENGTH
         } characters random usernames:</p><p><strong>${
             Math.round(averageRunDuration)

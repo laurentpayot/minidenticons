@@ -4,7 +4,7 @@ Super lightweight SVG identicon generator. No dependencies.
 
 ![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/minidenticons/main/no-custom-element.min.js)
 ![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/minidenticons/main/no-custom-element.min.js)
-<sup>(using the `identicon()` function only)</sup>
+<sup>(using the `minidenticon()` function only)</sup>
 
 ![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/minidenticons/main/minidenticons.min.js)
 ![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/minidenticons/main/minidenticons.min.js)
@@ -19,7 +19,9 @@ Super lightweight SVG identicon generator. No dependencies.
 
 ## Why
 
-Generate identicons (pixelated avatars) on the client from usernames instead of fetching images from a server. Much faster, saves bandwidth and [GDPR compliant](https://gdpr.eu/eu-gdpr-personal-data/)!
+- Generate identicons (pixelated avatars) on the client from usernames instead of fetching images from a server. Much faster, saves bandwidth and [GDPR compliant](https://gdpr.eu/eu-gdpr-personal-data/)!
+- Replace dull "initials" avatars by an easily remembered graphical avatar
+- Give a visual representation of hashes or any ID string
 
 ## Live Demo :video_game:
 
@@ -27,18 +29,18 @@ Play with it [here](https://laurentpayot.github.io/minidenticons/).
 
 ## Basic usage with the included custom element
 
-Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers. Import the `identiconSvg` custom element from the `minidenticons.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
+Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers. Import the `minidenticonSvg` custom element from the `minidenticons.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
 
 ```html
 <script type="module">
-  import { identiconSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons@3.1.2/minidenticons.min.js'
+  import { minidenticonSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons@4.0.0/minidenticons.min.js'
 </script>
 ```
 
-Then simply use `identicon-svg` tags with a `username` attribute :joy:
+Then simply use `minidenticon-svg` tags with a `username` attribute :joy:
 
 ```html
-<identicon-svg username="alienHead66"></identicon-svg>
+<minidenticon-svg username="alienHead66"></minidenticon-svg>
 ```
 
 For instance with the `alienHead66` username you will get the following identicon (without the border):
@@ -52,12 +54,12 @@ For instance with the `alienHead66` username you will get the following identico
 
 - Custom element identicons are [memoized](https://en.wikipedia.org/wiki/Memoization) (stored in memory so that it does not need to be recalculated).
 
-- Like for all elements except [void elements](https://html.spec.whatwg.org/multipage/syntax.html#void-elements), the closing tag `</identicon-svg>` is required.
+- Like for all elements except [void elements](https://html.spec.whatwg.org/multipage/syntax.html#void-elements), the closing tag `</minidenticon-svg>` is required.
 
 By default the color saturation and lightness are set to 50%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
 
 ```html
-<identicon-svg username="alienHead66" saturation="95" lightness="60"></identicon-svg>
+<minidenticon-svg username="alienHead66" saturation="95" lightness="60"></minidenticon-svg>
 ```
 
 Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark, pastel or whatever :sunglasses:
@@ -66,17 +68,18 @@ Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a co
 ![Minidenticons dark](img/minidenticons_dark.png)
 ![Minidenticons pastel](img/minidenticons_pastel.png)
 
-## Advanced usage with the `identicon()` function
+## Advanced usage with the `minidenticon()` function
 
-Instead of using the custom element, you can also use the `identicon()` function to generate SVG strings in your client (or your server).
+Instead of using the custom element, you can also use the `minidenticon()` function to generate SVG strings in your client (or your server).
 
 ```typescript
-identicon(username: string, saturation?: number|string, lightness?: number|string): string
+minidenticon(seed: string, saturation?: number|string, lightness?: number|string): string
 ```
 
-The `identicon()` function will return a SVG string generated from its username string argument. The optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
+The `minidenticon()` function will return a SVG string generated from its seed string argument. The seed argument can be a username, but actually any string used as an identifier. That is why the argument name `seed` was preferred to `username`.
+Optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
 
-Note that the `identicon()` function itself is *not* memoized.
+Note that the `minidenticon()` function itself is *not* memoized.
 
 ### NodeJS
 
@@ -91,22 +94,22 @@ npm install minidenticons
 #### Import
 
 ```javascript
-import { identicon } from 'minidenticons'
+import { minidenticon } from 'minidenticons'
 ```
 
-The `identiconSvg` custom element should be tree-shaken from your bundle, for an even smaller size of minidenticons :grin:
+The `minidenticonSvg` custom element should be tree-shaken from your bundle, for an even smaller size of minidenticons :grin:
 
 ### React
 
 The following [React component example](https://codepen.io/laurentpayot/pen/RweNNQR) inserts the identicon into an `img` tag `src` attribute. It also uses React `useMemo` to memoize the identicon.
 
 ```jsx
-import { identicon } from 'minidenticons'
+import { minidenticon } from 'minidenticons'
 import { useMemo } from 'react'
 
-const IdenticonImg = ({ username, saturation, lightness, ...props }) => {
+const MinidenticonImg = ({ username, saturation, lightness, ...props }) => {
   const svgURI = useMemo(
-    () => 'data:image/svg+xml;utf8,' + encodeURIComponent(identicon(username, saturation, lightness)),
+    () => 'data:image/svg+xml;utf8,' + encodeURIComponent(minidenticon(username, saturation, lightness)),
     [username, saturation, lightness]
   )
   return (<img src={svgURI} alt={username} {...props} />)
@@ -115,7 +118,7 @@ const IdenticonImg = ({ username, saturation, lightness, ...props }) => {
 You can then use this component with `img` props such as `width` and `height` along with minidenticons ones. All props except `username` are optional.
 
 ```html
-<IdenticonImg username="alienHead66" saturation="90" width="150" height="150" />
+<MinidenticonImg username="alienHead66" saturation="90" width="150" height="150" />
 ```
 For a TypeScript version of this example see the [original issue comment](https://github.com/laurentpayot/minidenticons/issues/2#issuecomment-1485545388) by [Dan Yishai](https://github.com/danyi1212).
 
@@ -124,7 +127,7 @@ For a TypeScript version of this example see the [original issue comment](https:
 In this example using [Workbox](https://developer.chrome.com/docs/workbox/), images with a path ending with `identicons/<username>.svg` are generated by the service worker and cached for one year.
 
 ```javascript
-import { identicon } from 'minidenticons'
+import { minidenticon } from 'minidenticons'
 import { registerRoute } from 'workbox-routing'
 
 registerRoute(
