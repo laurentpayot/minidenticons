@@ -56,10 +56,10 @@ For instance with the `alienHead66` username you will get the following identico
 
 - Like for all elements except [void elements](https://html.spec.whatwg.org/multipage/syntax.html#void-elements), the closing tag `</minidenticon-svg>` is required.
 
-By default the color saturation and lightness are set to 50%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
+By default the color saturation is set to 95% and the lightness is set to 45%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
 
 ```html
-<minidenticon-svg username="alienHead66" saturation="95" lightness="60"></minidenticon-svg>
+<minidenticon-svg username="alienHead66" saturation="60" lightness="50"></minidenticon-svg>
 ```
 
 Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark, pastel or whatever :sunglasses:

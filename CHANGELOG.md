@@ -6,22 +6,23 @@ _2023-06-??_
 
 ### Breaking Changes
 
-- identicon function
 - New algorithm to get a lot more different identicons (10 times less collisions). The shapes generated are totally different from previous versions.
+
+- More vivid default colors. The default saturation is now 95%, and the default lightness is now 45%. The number of different colors was also reduced from 12 to 9 for easier distinction.
+
+- Identicon function
   - call `minidenticon()` instead of  `identicon()`
 
 - Custom element
   - import `minidenticonSvg` instead of `minidenticonSvg`
   - use tag `minidenticon-svg` instead of `identicon-svg`
-  - Slightly decreased size
 
 ### New features
 
-- Slightly decreased custom element size
+- Slightly decreased sizes
 
 ### TODO
 
-- New default saturation and lightness??
 - tests
 
 ## 3.1.2

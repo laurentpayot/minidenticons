@@ -36,15 +36,15 @@ console.time("\nTests duration")
 
 const minidenticon = minidenticon_CE
 
-const usernames = new Set() // to ensure no duplicate random username
+const seeds = new Set() // to ensure no duplicate random seed
 const minidenticons = new Set()
 for (let i = 0; i < COLLISION_TESTS_NUMBER; i++) {
-    const username = randomString(15)
-    usernames.add(username)
-    minidenticons.add(minidenticon(username))
+    const seed = randomString(15)
+    seeds.add(seed)
+    minidenticons.add(minidenticon(seed))
     if ((i + 1) % ~~(COLLISION_TESTS_NUMBER / (i < (COLLISION_TESTS_NUMBER / 10) ? 100 : 10)) === 0)
-        console.log(`${usernames.size - minidenticons.size} collisions out of ${usernames.size}`,
-                    `(${((usernames.size - minidenticons.size)/usernames.size * 100).toFixed(2)}%)`)
+        console.log(`${seeds.size - minidenticons.size} collisions out of ${seeds.size}`,
+                    `(${((seeds.size - minidenticons.size)/seeds.size * 100).toFixed(2)}%)`)
 }
 
 console.timeEnd("\nTests duration")

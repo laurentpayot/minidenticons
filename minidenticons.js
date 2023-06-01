@@ -1,7 +1,7 @@
-// 12 different hue colors only for easy distinction
-const COLORS_NB = 12
-const DEFAULT_SATURATION = 50
-const DEFAULT_LIGHTNESS = 50
+// 9 different colors only for easy distinction (also a sweet spot for collisions)
+const COLORS_NB = 9
+const DEFAULT_SATURATION = 95
+const DEFAULT_LIGHTNESS = 45
 
 
 // based on the FNV-1a hash algorithm http://www.isthe.com/chongo/tech/comp/fnv/index.html
