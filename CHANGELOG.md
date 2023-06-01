@@ -22,10 +22,6 @@ _2023-06-??_
 - `minidenticon()` is almost two times faster than before
 - Slightly decreased sizes
 
-### TODO
-
-- tests
-
 ## 3.1.2
 
 _2023-04-14_

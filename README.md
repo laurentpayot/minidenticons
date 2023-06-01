@@ -40,15 +40,15 @@ Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-bro
 Then simply use `minidenticon-svg` tags with a `username` attribute :joy:
 
 ```html
-<minidenticon-svg username="alienHead66"></minidenticon-svg>
+<minidenticon-svg username="dude42"></minidenticon-svg>
 ```
 
-For instance with the `alienHead66` username you will get the following identicon (without the border):
+For instance with the `dude42` username you will get the following identicon (without the border):
 <table><tr><td>
-<img src="img/alienHead66.svg" alt="alienHead66 identicon" width="150" height="150">
+<img src="img/dude42.svg" alt="dude42 identicon" width="150" height="150">
 </td></tr></table>
 
-- Note that the picture above is resized. By default custom elements identicons will take [all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/alienHead66.svg)
+- Note that the picture above is resized. By default custom elements identicons will take [all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/dude42.svg)
 
 - The white space around the colored squares is here to allow uncropped circle avatars like the ones you can see in [the demo](https://laurentpayot.github.io/minidenticons/).
 
@@ -59,7 +59,7 @@ For instance with the `alienHead66` username you will get the following identico
 By default the color saturation is set to 95% and the lightness is set to 45%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
 
 ```html
-<minidenticon-svg username="alienHead66" saturation="60" lightness="50"></minidenticon-svg>
+<minidenticon-svg username="dude42" saturation="60" lightness="50"></minidenticon-svg>
 ```
 
 Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark, pastel or whatever :sunglasses:
@@ -118,7 +118,7 @@ const MinidenticonImg = ({ username, saturation, lightness, ...props }) => {
 You can then use this component with `img` props such as `width` and `height` along with minidenticons ones. All props except `username` are optional.
 
 ```html
-<MinidenticonImg username="alienHead66" saturation="90" width="150" height="150" />
+<MinidenticonImg username="dude42" saturation="90" width="150" height="150" />
 ```
 For a TypeScript version of this example see the [original issue comment](https://github.com/laurentpayot/minidenticons/issues/2#issuecomment-1485545388) by [Dan Yishai](https://github.com/danyi1212).
 
