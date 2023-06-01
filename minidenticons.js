@@ -10,7 +10,7 @@ const DEFAULT_LIGHTNESS = 50
  */
 function simpleHash(str) {
     return str.split('')
-        // `>>> 0` for 32 bit unsigned integer conversion, `>>> 2` to disregard last 4 bits for better randomness
+        // `>>> n` for 32 bit unsigned integer conversion disregarding last n bits for better randomness
         .reduce((hash, char) => (((hash ^ char.charCodeAt(0)) >>> 0) * 16777619) >>> 2, 2166136261)
 }
 
