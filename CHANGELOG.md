@@ -19,6 +19,7 @@ _2023-06-??_
 
 ### New features
 
+- `minidenticon()` is almost two times faster than before
 - Slightly decreased sizes
 
 ### TODO

@@ -192,8 +192,8 @@ Simply run `node benchmark/node` at the root of a Minidenticons git clone.
 On my machine I get the following result:
 
 ```
-Time to generate 5000 identicon SVG strings for 15 characters random usernames:
-7 milliseconds (10 runs average)
+Time to generate 10000 minidenticon SVG strings for 15 characters random seeds:
+8 milliseconds (10 runs average)
 ```
 
 ## License
