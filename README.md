@@ -48,7 +48,9 @@ For instance with the `dude42` username you will get the following identicon (wi
 <img src="img/dude42.svg" alt="dude42 identicon" width="150" height="150">
 </td></tr></table>
 
-- Note that the picture above is resized. By default custom elements identicons will take [all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/dude42.svg)
+- Note that the picture above is resized. Minidenticons are [SVG](https://en.wikipedia.org/wiki/SVG) images that will take [all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/dude42.svg)
+
+- The background is transparent so you can style it with CSS.
 
 - The white space around the colored squares is here to allow uncropped circle avatars like the ones you can see in [the demo](https://laurentpayot.github.io/minidenticons/).
 
