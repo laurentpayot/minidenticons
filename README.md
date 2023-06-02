@@ -15,7 +15,7 @@ Super lightweight SVG identicon generator. No dependencies.
 [![npm](https://badgen.net/npm/v/minidenticons)](https://www.npmjs.com/package/minidenticons)
 [![license](https://badgen.net/github/license/laurentpayot/minidenticons)](https://github.com/laurentpayot/minidenticons/blob/main/LICENSE)
 
-[![Minidenticons](img/minidenticons.png)](https://laurentpayot.github.io/minidenticons/)
+[![Minidenticons](img/minidenticons.svg)](https://laurentpayot.github.io/minidenticons/)
 
 ## Why
 
@@ -62,11 +62,11 @@ By default the color saturation is set to 95% and the lightness is set to 45%. B
 <minidenticon-svg username="dude42" saturation="60" lightness="50"></minidenticon-svg>
 ```
 
-Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark, pastel or whatever :sunglasses:
+Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark or whatever :sunglasses:
 
-![Minidenticons light](img/minidenticons_light.png)
-![Minidenticons dark](img/minidenticons_dark.png)
-![Minidenticons pastel](img/minidenticons_pastel.png)
+![Minidenticons light](img/smileys-white.svg)
+![Minidenticons dark](img/smileys-black.svg)
+![Minidenticons weird](img/smileys-yellow.svg)
 
 ## Advanced usage with the `minidenticon()` function
 
