@@ -76,7 +76,8 @@ Instead of using the custom element, you can also use the `minidenticon()` funct
 minidenticon(seed: string, saturation?: number|string, lightness?: number|string): string
 ```
 
-The `minidenticon()` function will return a SVG string generated from its seed string argument. The seed argument can be a username, but actually any string used as an identifier. That is why the argument name `seed` was preferred to `username`.
+The `minidenticon()` function will return a SVG string generated from its seed string argument. The seed argument can be a username, but actually any string used as an identifier.
+
 Optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
 
 Note that the `minidenticon()` function itself is *not* memoized.
@@ -153,7 +154,7 @@ You will always get the same identicon for a given username. But it is not impos
 Generated identicons are 5×5 pixels large with vertical symmetry, and can have 9 different hues for the same saturation and lightness.
 This means there are 2<sup>(3×5)</sup> × 9 = 294,912 different identicons possible, but duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
 
-The `npm test` command results below show that you have less than 2% chances to generate a duplicate identicon when already using 10,000 of them.
+The `npm test` command results below show that you have less than a 2 percent chance to generate a duplicate identicon when already using 10,000 of them.
 
 ```text
 0 collisions out of 100 (0.00%)
