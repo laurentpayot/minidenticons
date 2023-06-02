@@ -4,9 +4,15 @@
 
 _2023-06-??_
 
+### New features
+
+- 10 times less collisions
+- SVG string generation is almost twice faster
+- Slightly decreased minified and compressed sizes
+
 ### Breaking Changes
 
-- New algorithm to get a lot more different identicons (10 times less collisions). The shapes generated are totally different from previous versions.
+- New algorithm to get a lot more different identicons. For the same ~~username~~ *seed* the shape and color will change compared to previous versions.
 
 - More vivid default colors. The default saturation is now 95%, and the default lightness is now 45%. The number of different colors was also reduced from 12 to 9 for easier distinction.
 
@@ -16,11 +22,6 @@ _2023-06-??_
 - Custom element
   - import `minidenticonSvg` instead of `minidenticonSvg`
   - use tag `minidenticon-svg` instead of `identicon-svg`
-
-### New features
-
-- `minidenticon()` is almost two times faster than before
-- Slightly decreased sizes
 
 ## 3.1.2
 
