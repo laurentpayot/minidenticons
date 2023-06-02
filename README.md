@@ -15,7 +15,7 @@ Super lightweight SVG identicon generator. No dependencies.
 [![npm](https://badgen.net/npm/v/minidenticons)](https://www.npmjs.com/package/minidenticons)
 [![license](https://badgen.net/github/license/laurentpayot/minidenticons)](https://github.com/laurentpayot/minidenticons/blob/main/LICENSE)
 
-<img src="img/minidenticons.svg" style="width:100%" alt="Minidenticons">
+[<img src="img/minidenticons.svg" style="width:100%" alt="Minidenticons">](https://laurentpayot.github.io/minidenticons/)
 
 ## Why
 
