@@ -64,9 +64,9 @@ By default the color saturation is set to 95% and the lightness is set to 45%. B
 
 Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark or whatever :sunglasses:
 
-<img src="img/smileys-white.svg" style="width:100%" alt="Minidenticons light">
-<img src="img/smileys-black.svg" style="width:100%" alt="Minidenticons dark">
-<img src="img/smileys-yellow.svg" style="width:100%" alt="Minidenticons weird">
+![Minidenticons light](img/smileys-white.svg)
+![Minidenticons dark](img/smileys-black.svg)
+![Minidenticons weird](img/smileys-yellow.svg)
 
 ## Advanced usage with the `minidenticon()` function
 
