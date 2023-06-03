@@ -3,15 +3,16 @@ const COLORS_NB = 9
 const DEFAULT_SATURATION = 95
 const DEFAULT_LIGHTNESS = 45
 
+const MAGIC_NUMBER = 5
 
-// based on the FNV-1a hash algorithm http://www.isthe.com/chongo/tech/comp/fnv/index.html
+
 /**
  * @type {(str: string) => number}
  */
 function simpleHash(str) {
     return str.split('')
-        // `>>> n` for 32 bit unsigned integer conversion disregarding last n bits for better randomness
-        .reduce((hash, char) => (((hash ^ char.charCodeAt(0)) >>> 0) * 16777619) >>> 2, 2166136261)
+        .reduce((hash, char) => (hash ^ char.charCodeAt(0)) * -MAGIC_NUMBER, MAGIC_NUMBER)
+        >>> 2 // 32 bit unsigned integer conversion disregarding last 2 bits for better randomness
 }
 
 /**
