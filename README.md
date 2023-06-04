@@ -33,22 +33,22 @@ Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-bro
 
 ```html
 <script type="module">
-  import { minidenticonSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons@4.0.0/minidenticons.min.js'
+  import { minidenticonSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons@4.1.0/minidenticons.min.js'
 </script>
 ```
 
 Then simply use `minidenticon-svg` tags with a `username` attribute :joy:
 
 ```html
-<minidenticon-svg username="dude42"></minidenticon-svg>
+<minidenticon-svg username="laurent"></minidenticon-svg>
 ```
 
-For instance with the `dude42` username you will get the following identicon (without the border):
+For instance with the `laurent` username you will get the following identicon (without the border):
 <table><tr><td>
-<img src="img/dude42.svg" alt="dude42 identicon" width="150" height="150">
+<img src="img/laurent.svg" alt="laurent identicon" width="150" height="150">
 </td></tr></table>
 
-- Note that the picture above is resized. Minidenticons are [SVG](https://en.wikipedia.org/wiki/SVG) images that will take [all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/dude42.svg)
+- Note that the picture above is resized. Minidenticons are [SVG](https://en.wikipedia.org/wiki/SVG) images that will take [all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/laurent.svg)
 
 - The background is transparent so you can style it with CSS.
 
@@ -61,7 +61,7 @@ For instance with the `dude42` username you will get the following identicon (wi
 By default the color saturation is set to 95% and the lightness is set to 45%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
 
 ```html
-<minidenticon-svg username="dude42" saturation="60" lightness="50"></minidenticon-svg>
+<minidenticon-svg username="laurent" saturation="60" lightness="50"></minidenticon-svg>
 ```
 
 Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a combination of saturation and lightness that matches your website theme colors: light, dark or whatever :sunglasses:
@@ -121,7 +121,7 @@ const MinidenticonImg = ({ username, saturation, lightness, ...props }) => {
 You can then use this component with `img` props such as `width` and `height` along with minidenticons ones. All props except `username` are optional.
 
 ```html
-<MinidenticonImg username="dude42" saturation="90" width="150" height="150" />
+<MinidenticonImg username="laurent" saturation="90" width="150" height="150" />
 ```
 For a TypeScript version of this example see the [original issue comment](https://github.com/laurentpayot/minidenticons/issues/2#issuecomment-1485545388) by [Dan Yishai](https://github.com/danyi1212).
 
@@ -167,16 +167,16 @@ The `npm test` command results below show that you have less than a 2 percent ch
 0 collisions out of 600 (0.00%)
 0 collisions out of 700 (0.00%)
 0 collisions out of 800 (0.00%)
-0 collisions out of 900 (0.00%)
+1 collisions out of 900 (0.11%)
 1 collisions out of 1000 (0.10%)
-4 collisions out of 2000 (0.20%)
-17 collisions out of 3000 (0.57%)
+8 collisions out of 2000 (0.40%)
+14 collisions out of 3000 (0.47%)
 22 collisions out of 4000 (0.55%)
-40 collisions out of 5000 (0.80%)
-62 collisions out of 6000 (1.03%)
-74 collisions out of 7000 (1.06%)
-106 collisions out of 8000 (1.32%)
-133 collisions out of 9000 (1.48%)
+37 collisions out of 5000 (0.74%)
+58 collisions out of 6000 (0.97%)
+75 collisions out of 7000 (1.07%)
+99 collisions out of 8000 (1.24%)
+129 collisions out of 9000 (1.43%)
 163 collisions out of 10000 (1.63%)
 ```
 
