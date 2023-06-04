@@ -3,47 +3,61 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Minidenticons Demo</title>
     <link rel="icon" href="/minidenticons/img/icon.svg" type="image/svg+xml">
 
-    <style type="text/css" media="screen, print">
+    <!-- Using a CSS Framework like Bootstrap for modern, responsive design -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- Additional custom styling -->
+    <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
+            background-color: #343a40;
+            color: #f8f9fa;
         }
+
         #github-link {
             position: fixed;
             top: 10px;
             right: 10px;
         }
+
         main {
-            text-align: center;
-        }
-        fieldset {
-            border: 0;
-            width: 300px;
-            margin: auto;
-        }
-        fieldset > p {
-            text-align: left;
-        }
-        #username-input {
             margin-top: 100px;
+            height: calc(100vh - 200px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        minidenticon-svg {
+
+        .minidenticon-svg {
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #6c757d;
             width: 40px;
             height: 40px;
-            border-radius: 50%;
-            background-color: #EEE;
-            display: inline-block;
-            margin: 5px;
+            margin-bottom: 5px;
         }
-        main + minidenticon-svg {
+
+        .minidenticon-large {
+            display: block;
+            margin: auto;
             width: 80px;
             height: 80px;
-            display: block;
-            margin: -225px auto 160px auto;
+        }
+
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            padding: 20px;
+            background-color: #343a40;
+            overflow: auto;
         }
     </style>
 </head>
@@ -53,18 +67,25 @@
 <script type="module">
     import { minidenticonSvg } from "./minidenticons.min.js"
 
-    const main = document.querySelector('main')
-    const usernameInput = main.querySelector('#username-input')
-    const saturationInput = main.querySelector('#saturation-input')
-    const saturationLabel = main.querySelector('label[for=saturation]')
-    const lightnessInput = main.querySelector('#lightness-input')
-    const lightnessLabel = main.querySelector('label[for=lightness]')
-
+    const usernameInput = document.querySelector('#username-input')
+    const saturationInput = document.querySelector('#saturation-input')
+    const saturationLabel = document.querySelector('label[for=saturation-input]')
+    const lightnessInput = document.querySelector('#lightness-input')
+    const lightnessLabel = document.querySelector('label[for=lightness-input]')
+    const sidebar = document.querySelector('.sidebar')
+    
     function refresh() {
         saturationLabel.textContent = `Saturation ${saturationInput.value}%`
         lightnessLabel.textContent = `Lightness ${lightnessInput.value}%`
-        main.insertAdjacentHTML("afterend",
-            `<minidenticon-svg username="${usernameInput.value}"
+
+        let oldIcon = document.querySelector('minidenticon-svg.minidenticon-large')
+        if (oldIcon) {
+            oldIcon.classList.remove('minidenticon-large')
+            sidebar.prepend(oldIcon)
+        }
+
+        document.body.insertAdjacentHTML("beforeend",
+            `<minidenticon-svg class="minidenticon-large" username="${usernameInput.value}"
                 title='"${usernameInput.value.replaceAll("'", "&apos;")}", ${saturationInput.value}, ${lightnessInput.value}'
                 saturation="${saturationInput.value}" lightness="${lightnessInput.value}"
             ></minidenticon-svg>`
@@ -72,30 +93,37 @@
     }
 
     usernameInput.addEventListener('input', () => refresh())
-    saturationInput.addEventListener('change', () => refresh())
-    lightnessInput.addEventListener('change', () => refresh())
+    saturationInput.addEventListener('input', () => refresh())
+    lightnessInput.addEventListener('input', () => refresh())
 
     refresh()
-
 </script>
 
 <a id="github-link" href="https://github.com/laurentpayot/minidenticons">
     <img src="https://badgen.net/badge/icon/github?icon=github&label" alt="GitHub repository">
 </a>
 
-<main>
-    <h1>Minidenticons Demo</h1>
-    <input id="username-input" autofocus size="18" placeholder="Enter a nice username">
-    <fieldset>
-        <p>
-            <input type="range" id="saturation-input" min="0" max="100" value="95">
-            <label for="saturation"></label>
-        </p>
-        <p>
-            <input type="range" id="lightness-input" min="0" max="100" value="45">
-            <label for="lightness"></label>
-        </p>
-    </fieldset>
+<div class="sidebar"></div>
+
+<main class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <h1 class="text-center my-5">Minidenticons Demo</h1>
+            <div class="input-group mb-3">
+                <input type="text" id="username-input" class="form-control" placeholder="Enter a nice username" autofocus>
+            </div>
+            <div class="slider-group">
+                <div class="mb-3">
+                    <label for="saturation-input" class="form-label">Saturation</label>
+                    <input type="range" id="saturation-input" class="form-control-range" min="0" max="100" value="95">
+                </div>
+                <div class="mb-3">
+                    <label for="lightness-input" class="form-label">Lightness</label>
+                    <input type="range" id="lightness-input" class="form-control-range" min="0" max="100" value="45">
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 </body>
