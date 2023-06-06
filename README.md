@@ -42,21 +42,35 @@ Then simply use `minidenticon-svg` tags with a `username` attribute :joy:
 ```html
 <minidenticon-svg username="laurent"></minidenticon-svg>
 ```
+<sup>(Note that like for all elements except [void elements](https://html.spec.whatwg.org/multipage/syntax.html#void-elements), the closing tag `</minidenticon-svg>` is required)</sup>
 
 For instance with the `laurent` username you will get the following identicon (without the border):
 <table><tr><td>
-<img src="img/laurent.svg" alt="laurent identicon" width="150" height="150">
+<img src="img/laurent.svg" alt="laurent identicon" width="120" height="120">
 </td></tr></table>
 
-- Note that the picture above is resized. Minidenticons are [SVG](https://en.wikipedia.org/wiki/SVG) images that will take [all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/laurent.svg)
+### Styling
 
-- The background is transparent so you can style it with CSS.
+For easy CSS styling:
 
-- The white space around the colored squares is here to allow uncropped circle avatars like the ones you can see in [the demo](https://laurentpayot.github.io/minidenticons/).
+- Minidenticons are [SVG](https://en.wikipedia.org/wiki/SVG) images that will take [all the space available.](https://raw.githubusercontent.com/laurentpayot/minidenticons/main/img/laurent.svg) The picture above is resized.
 
-- Custom element identicons are [memoized](https://en.wikipedia.org/wiki/Memoization) (stored in memory so that it does not need to be recalculated).
+- The background is transparent.
+- There is white space around the colored square matrix to allow uncropped circle avatars.
 
-- Like for all elements except [void elements](https://html.spec.whatwg.org/multipage/syntax.html#void-elements), the closing tag `</minidenticon-svg>` is required.
+So with the following CSS:
+```css
+minidenticon-svg svg {
+  border-radius: 50%;
+  background-color: grey;
+  height: 48px;
+  width: 48px;
+};
+```
+You will get:
+
+![Styled minidenticon](img/laurent-round.svg)
+
 
 By default the color saturation is set to 95% and the lightness is set to 45%. But you can change these values with the `saturation` and/or `lightness` attributes, for instance:
 
@@ -69,6 +83,11 @@ Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a co
 ![Minidenticons light](img/smileys-white.svg)
 ![Minidenticons dark](img/smileys-black.svg)
 ![Minidenticons weird](img/smileys-yellow.svg)
+
+### Performance
+
+- *Custom element* identicons are [memoized](https://en.wikipedia.org/wiki/Memoization) (stored in memory so that it does not need to be recalculated).
+- To see how long it takes for your browser to generate 100 identicon custom elements (for a big page) try out the [online browser benchmark](https://laurentpayot.github.io/minidenticons/benchmark/browser.html).
 
 ## Advanced usage with the `minidenticon()` function
 
@@ -102,6 +121,16 @@ import { minidenticon } from 'minidenticons'
 
 The `minidenticonSvg` custom element should be tree-shaken from your bundle, for an even smaller size of minidenticons :grin:
 
+#### Performance
+
+The `minidenticon()` function is *fast*. You can see by yourself if you run `node benchmark/node` at the root of a Minidenticons git clone.
+
+On my machine I get the following result:
+
+```
+Time to generate 10000 minidenticon SVG strings for 15 characters random seeds:
+8 milliseconds (10 runs average)
+```
 ### React
 
 The following [React component example](https://codepen.io/laurentpayot/pen/RweNNQR) inserts the identicon into an `img` tag `src` attribute. It also uses React `useMemo` to memoize the identicon.
@@ -153,7 +182,7 @@ For [Elm](https://elm-lang.org/) enthusiasts there is a Minidenticons package on
 
 You will always get the same identicon for a given username. But it is not impossible to have different usernames with the same identicon. That's a [collision](https://en.wikipedia.org/wiki/Hash_collision).
 
-Generated identicons are 5×5 pixels large with vertical symmetry, and can have 9 different hues for the same saturation and lightness.
+Generated identicons are 5×5 matrices with vertical symmetry, and can have 9 different hues for the same saturation and lightness.
 This means there are 2<sup>(3×5)</sup> × 9 = 294,912 different identicons possible, but duplicate identicons are inevitable when using a lot of them. It shouldn’t matter as identicons should not be used solely to identify an user, and should always be coupled to a *unique* username :wink:
 
 The `npm test` command results below show that you have less than a 2 percent chance to generate a duplicate identicon when already using 10,000 of them.
@@ -178,25 +207,6 @@ The `npm test` command results below show that you have less than a 2 percent ch
 99 collisions out of 8000 (1.24%)
 129 collisions out of 9000 (1.43%)
 163 collisions out of 10000 (1.63%)
-```
-
-## Performance
-
-Minidenticons are *fast*.
-
-### Custom element benchmark
-
-To see how long it takes for your browser to generate 100 identicon custom elements (for a big page) try out the [online browser benchmark](https://laurentpayot.github.io/minidenticons/benchmark/browser.html).
-
-### NodeJS benchmark
-
-Simply run `node benchmark/node` at the root of a Minidenticons git clone.
-
-On my machine I get the following result:
-
-```
-Time to generate 10000 minidenticon SVG strings for 15 characters random seeds:
-8 milliseconds (10 runs average)
 ```
 
 ## License
