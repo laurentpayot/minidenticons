@@ -123,9 +123,7 @@ The `minidenticonSvg` custom element should be tree-shaken from your bundle, for
 
 #### Performance
 
-The `minidenticon()` function is *fast*. You can see by yourself if you run `node benchmark/node` at the root of a Minidenticons git clone.
-
-On my machine I get the following result:
+The `minidenticon()` function is *fast*. You can see by yourself if you run `node benchmark/node` at the root of a Minidenticons git clone. On my machine I get the following result:
 
 ```
 Time to generate 10000 minidenticon SVG strings for 15 characters random seeds:
