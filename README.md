@@ -20,7 +20,7 @@ Super lightweight SVG identicon generator. No dependencies.
 ## Why
 
 - Generate identicons (pixelated avatars) on the client from usernames instead of fetching images from a server. Much faster, saves bandwidth and [GDPR compliant](https://gdpr.eu/eu-gdpr-personal-data/)!
-- Replace dull initial avatars like <sub><img src="img/initials.svg" alt="laurent identicon" width="20" height="20"></sub> by easily remembered graphical avatars.
+- Replace dull initial avatars like <sub><img src="img/initials.svg" alt="laurent identicon" width="24" height="24"></sub> by easily remembered graphical avatars.
 - Give a visual representation of hashes or any ID string.
 
 ## Live Demo :video_game:
