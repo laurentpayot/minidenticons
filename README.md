@@ -33,7 +33,7 @@ Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-bro
 
 ```html
 <script type="module">
-  import { minidenticonSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons@4.1.0/minidenticons.min.js'
+  import { minidenticonSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons@4.2.0/minidenticons.min.js'
 </script>
 ```
 
@@ -94,12 +94,14 @@ Play with [the demo](https://laurentpayot.github.io/minidenticons/) to find a co
 Instead of using the custom element, you can also use the `minidenticon()` function to generate SVG strings in your client (or your server).
 
 ```typescript
-minidenticon(seed: string, saturation?: number|string, lightness?: number|string): string
+minidenticon(seed: string, saturation?: number|string, lightness?: number|string, hashFn?: (str: string) => number): string
 ```
 
 The `minidenticon()` function will return a SVG string generated from its seed string argument. The seed argument can be a username, but actually any string used as an identifier.
 
 Optional saturation and lightness arguments should be percentages; that is, numbers (or strings) between 0 and 100.
+
+If you need to, you can use your own hash function as argument of the fourth parameter (optional). Your custom hash function must take a string and return a number. The last 15 bits of the integer part of the hash will be used to draw the squares. The included custom element does not use this last parameter.
 
 Note that the `minidenticon()` function itself is *not* memoized.
 

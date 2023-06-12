@@ -1,6 +1,6 @@
 {
   "name": "minidenticons",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Super lightweight SVG identicon (icon avatar) generator",
   "author": "Laurent Payot",
   "license": "MIT",
@@ -58,6 +58,6 @@
     "serve": "python3 -m http.server"
   },
   "devDependencies": {
-    "terser": "^5.17.7"
+    "terser": "5.16.2"
   }
 }

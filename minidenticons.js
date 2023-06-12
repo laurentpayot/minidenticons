@@ -18,8 +18,8 @@ function simpleHash(str) {
 /**
  * @type {import('.').minidenticon}
  */
-export function minidenticon(seed="", saturation=DEFAULT_SATURATION, lightness=DEFAULT_LIGHTNESS) {
-    const hash = simpleHash(seed)
+export function minidenticon(seed="", saturation=DEFAULT_SATURATION, lightness=DEFAULT_LIGHTNESS, hashFn=simpleHash) {
+    const hash = hashFn(seed)
     // console.log("%c" + hash.toString(2).padStart(32, "0"), "font-family:monospace") // uncomment to debug
     const hue = (hash % COLORS_NB) * (360 / COLORS_NB)
     return [...Array(seed ? 25 : 0)].reduce((acc, e, i) =>

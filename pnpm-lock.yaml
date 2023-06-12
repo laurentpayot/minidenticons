@@ -1,9 +1,13 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 devDependencies:
   terser:
-    specifier: ^5.17.7
-    version: 5.17.7
+    specifier: 5.16.2
+    version: 5.16.2
 
 packages:
 
@@ -74,8 +78,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /terser@5.17.7:
-    resolution: {integrity: sha512-/bi0Zm2C6VAexlGgLlVxA0P2lru/sdLyfCVaRMfKVo9nWxbmz7f/sD8VPybPeSUJaJcwmCJis9pBIhcVcG1QcQ==}
+  /terser@5.16.2:
+    resolution: {integrity: sha512-JKuM+KvvWVqT7muHVyrwv7FVRPnmHDwF6XwoIxdbF5Witi0vu99RYpxDexpJndXt3jbZZmmWr2/mQa6HvSNdSg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:

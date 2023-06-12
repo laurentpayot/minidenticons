@@ -1,5 +1,12 @@
 # Minidenticons changelog
 
+# 4.2.0
+
+_2023-06-12_
+
+### New features
+
+- Added a custom hash function optional parameter to the `minidenticon()` function. The included custom element does not use this parameter.
 
 # 4.1.0
 
