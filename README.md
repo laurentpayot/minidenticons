@@ -13,7 +13,7 @@ Super lightweight SVG identicon generator. No dependencies.
 <!--
 [![dependencies](https://badgen.net/bundlephobia/dependency-count/minidenticons)](https://bundlephobia.com/package/minidenticons)
 -->
-[![dependencies](https://img.shields.io/badge/dependencies-None-green)](https://github.com/laurentpayot/minidenticons/blob/main/package.json#L60)
+[![dependencies](https://badgen.net/static/dependencies/None/green)](https://github.com/laurentpayot/minidenticons/blob/main/package.json#L60)
 [![types](https://badgen.net/npm/types/minidenticons)](https://github.com/laurentpayot/minidenticons/blob/main/index.d.ts)
 [![npm](https://badgen.net/npm/v/minidenticons)](https://www.npmjs.com/package/minidenticons)
 [![license](https://badgen.net/github/license/laurentpayot/minidenticons)](https://github.com/laurentpayot/minidenticons/blob/main/LICENSE)
