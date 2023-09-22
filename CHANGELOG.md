@@ -1,6 +1,6 @@
 # Minidenticons changelog
 
-# 4.2.0
+## 4.2.0
 
 _2023-06-12_
 
@@ -8,7 +8,7 @@ _2023-06-12_
 
 - Added a custom hash function optional parameter to the `minidenticon()` function. The included custom element does not use this parameter.
 
-# 4.1.0
+## 4.1.0
 
 _2023-06-03_
 
@@ -20,7 +20,7 @@ _2023-06-03_
 
 - New smaller and simpler custom hash algorithm working just as good as the previous FNV-1a based one. The shape and color for a given seed have changed. Not bumping version to 5 as the version 4 was only released the day before.
 
-# 4.0.0
+## 4.0.0
 
 _2023-06-02_
 
