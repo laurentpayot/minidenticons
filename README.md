@@ -218,4 +218,4 @@ The `npm test` command results below show that you have less than a 2 percent ch
 
 ## Stargazers :heart:
 
-[![Stargazers repo roster for @laurentpayot/minidenticons](https://reporoster.com/stars/laurentpayot/minidenticons)](https://github.com/laurentpayot/minidenticons/stargazers)
+[![Stargazers repo roster for @laurentpayot/minidenticons](http://reporoster.com/stars/laurentpayot/minidenticons)](https://github.com/laurentpayot/minidenticons/stargazers)
