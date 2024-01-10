@@ -177,6 +177,10 @@ registerRoute(
 )
 ```
 
+## Rust
+
+A [Rust](https://www.rust-lang.org/) port of Minidenticons was made by Théo Battrel: [`minidenticons-rs`](https://gitlab.com/Emplis/minidenticons-rs).
+
 ## Elm
 
 For [Elm](https://elm-lang.org/) enthusiasts there is a Minidenticons package on the Elm package repository: [`minidenticons-elm`](https://package.elm-lang.org/packages/laurentpayot/minidenticons-elm/latest).
