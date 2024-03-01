@@ -36,7 +36,7 @@ Minidenticons uses [ES modules](https://jakearchibald.com/2017/es-modules-in-bro
 
 ```html
 <script type="module">
-  import { minidenticonSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons@4.2.0/minidenticons.min.js'
+  import { minidenticonSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons@4.2.1/minidenticons.min.js'
 </script>
 ```
 

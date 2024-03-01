@@ -1,5 +1,13 @@
 # Minidenticons changelog
 
+## 4.2.1
+
+_2024-03-01_
+
+### Bug fix
+
+- Fixed a bug with Vite hot reload https://github.com/laurentpayot/minidenticons/issues/8
+
 ## 4.2.0
 
 _2023-06-12_
