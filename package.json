@@ -58,6 +58,6 @@
     "serve": "python3 -m http.server"
   },
   "devDependencies": {
-    "terser": "5.16.2"
+    "terser": "^5.28.1"
   }
 }
