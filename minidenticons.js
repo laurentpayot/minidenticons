@@ -38,25 +38,26 @@ export function minidenticon(seed="", saturation=DEFAULT_SATURATION, lightness=D
  */
 export const minidenticonSvg =
     // declared as a pure function to be tree-shaken by the bundler
-    /*@__PURE__*/globalThis.customElements?.define('minidenticon-svg',
-        class MinidenticonSvg extends HTMLElement {
-            static observedAttributes = ['username', 'saturation', 'lightness']
-            // private fields to allow Terser mangling
-            static #memoized = {}
-            #isConnected = false
-            connectedCallback() {
-                this.#setContent()
-                this.#isConnected = true
+    /*@__PURE__*/globalThis.customElements?.get('minidenticon-svg') ? null :
+        globalThis.customElements?.define('minidenticon-svg',
+            class MinidenticonSvg extends HTMLElement {
+                static observedAttributes = ['username', 'saturation', 'lightness']
+                // private fields to allow Terser mangling
+                static #memoized = {}
+                #isConnected = false
+                connectedCallback() {
+                    this.#setContent()
+                    this.#isConnected = true
+                }
+                // attributeChangedCallback() is called for every observed attribute before connectedCallback()
+                attributeChangedCallback() { if (this.#isConnected) this.#setContent() }
+                #setContent() {
+                    const args = MinidenticonSvg.observedAttributes
+                                    .map(key => this.getAttribute(key) || undefined)
+                    const memoKey = args.join(',')
+                    this.innerHTML = MinidenticonSvg.#memoized[memoKey] ??=
+                        // @ts-ignore
+                        minidenticon(...args)
+                }
             }
-            // attributeChangedCallback() is called for every observed attribute before connectedCallback()
-            attributeChangedCallback() { if (this.#isConnected) this.#setContent() }
-            #setContent() {
-                const args = MinidenticonSvg.observedAttributes
-                                .map(key => this.getAttribute(key) || undefined)
-                const memoKey = args.join(',')
-                this.innerHTML = MinidenticonSvg.#memoized[memoKey] ??=
-                    // @ts-ignore
-                    minidenticon(...args)
-            }
-        }
-    )
+        )
