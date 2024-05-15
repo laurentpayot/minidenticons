@@ -47,6 +47,13 @@ Then simply use `minidenticon-svg` tags with a `username` attribute :joy:
 ```
 <sup>(Note that like for all elements except [void elements](https://html.spec.whatwg.org/multipage/syntax.html#void-elements), the closing tag `</minidenticon-svg>` is required)</sup>
 
+Alternatively, if you are writing vanilla JS, you can also use `document.createElement`
+
+```js
+const identicon = document.createElement("minidenticon-svg");                                            
+identicon.setAttribute('username', 'laurent')   
+```
+
 For instance with the `laurent` username you will get the following identicon (without the border):
 <table><tr><td>
 <img src="img/laurent.svg" alt="laurent identicon" width="120" height="120">
