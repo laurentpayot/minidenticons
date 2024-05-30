@@ -2,12 +2,12 @@
 
 Super lightweight SVG identicon generator. No dependencies.
 
-![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/minidenticons/main/no-custom-element.min.js)
-![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/minidenticons/main/no-custom-element.min.js)
+![minified + brotlied size](https://badgen.net/static/minified%20brotli/269%20bytes/green)
+![minified + zipped size](https://badgen.net/static/minified%20zip/311%20bytes/green)
 <sup>(using the `minidenticon()` function only)</sup>
 
-![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/minidenticons/main/minidenticons.min.js)
-![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/minidenticons/main/minidenticons.min.js)
+![minified + brotlied size](https://badgen.net/static/minified%20brotli/453%20bytes/green)
+![minified + zipped size](https://badgen.net/static/minified%20zip/552%20bytes/green)
 <sup>(using the included custom element)</sup>
 
 <!--
